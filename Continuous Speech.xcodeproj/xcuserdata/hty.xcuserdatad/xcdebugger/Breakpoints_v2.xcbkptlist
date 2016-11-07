@@ -2,4 +2,214 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500130529.31765"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
+            landmarkName = "DigitRecognition(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; segTemGroup)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500131456.436135"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "408"
+            endingLineNumber = "408"
+            landmarkName = "DigitRecognition(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; segTemGroup)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500136310.362251"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "425"
+            endingLineNumber = "425"
+            landmarkName = "DigitRecognition(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; segTemGroup)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500130529.31765"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
+            landmarkName = "DigitRecognition(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; segTemGroup)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500130529.31765"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "DigitRecognition(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; segTemGroup)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500130529.31765"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
+            landmarkName = "DigitRecognition(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; segTemGroup)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500130529.31765"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
+            landmarkName = "DigitRecognition(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; segTemGroup)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500130545.35012"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
+            landmarkName = "DigitRecognition(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; segTemGroup)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500131451.613736"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "416"
+            endingLineNumber = "416"
+            landmarkName = "DigitRecognition(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; segTemGroup)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500136310.362251"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "417"
+            endingLineNumber = "417"
+            landmarkName = "DigitRecognition(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; segTemGroup)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500133199.060064"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
+            landmarkName = "DigitRecognition(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; segTemGroup)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500136310.362251"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "419"
+            endingLineNumber = "419"
+            landmarkName = "DigitRecognition(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; segTemGroup)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500176408.399806"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "DigitRecognition(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; segTemGroup)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -13,6 +13,8 @@
 
 using namespace std;
 
+string testPath = "/Users/hty/Desktop/1/record.wav";
+
 string wavTestPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/record.wav";
 string txtTestPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/";
 //used to save segment result
@@ -30,23 +32,21 @@ void writeSeg(){
      vector<vector<vector<double>>> segTemGroup;
     
      for (int i = 0; i < TYPE_NUM; i++) {
-     vector<vector<vector<double>>> temGroup;
-     for (int j = 0; j < TEM_NUM; j++) {
-     cout << "-----------------------Template " << i << " Instance " << j << "------------------------" << endl;
-     string wavpath = wavTemPath + to_string(i) + "/" + to_string(j) + "/record.wav";
-     //            capture(wavpath);
-     vector<vector<double>> temFeature;
-     string txtpath = txtTemPath + to_string(i) + "/" + to_string(j) + "/";
-     featureExtraction(temFeature, wavpath, txtpath);
-     temGroup.push_back(temFeature);
+         vector<vector<vector<double>>> temGroup;
+         for (int j = 0; j < TEM_NUM; j++) {
+             cout << "-----------------------Template " << i << " Instance " << j << "------------------------" << endl;
+             string wavpath = wavTemPath + to_string(i) + "/" + to_string(j) + "/record.wav";
+             //            capture(wavpath);
+             vector<vector<double>> temFeature;
+             string txtpath = txtTemPath + to_string(i) + "/" + to_string(j) + "/";
+             featureExtraction(temFeature, wavpath, txtpath);
+             temGroup.push_back(temFeature);
+         }
+         vector<vector<double>> segTem;
+         segTem = dtw2hmm(temGroup);
+         cout << "You have got the segment template!!!!!!!!!!!!!!!!!!!" << endl;
+         segTemGroup.push_back(segTem);
      }
-     vector<vector<double>> segTem;
-     segTem = dtw2hmm(temGroup);
-     cout << "You have got the segment template!!!!!!!!!!!!!!!!!!!" << endl;
-     segTemGroup.push_back(segTem);
-     }
-     
-     
      
      
      ofstream out(segmentPath);
@@ -68,6 +68,24 @@ void writeSeg(){
 }
 
 
+void problem3(vector<vector<vector<double>>> segTemGroup, vector<vector<double>> testInput){
+    Trie trie;
+    TrieNode* root = trie.getRoot();
+    for (int i = 0; i < MAX_BRANCH_NUM - 1; i++)
+    {
+        root->nextBranch[i]->segTemplate = segTemGroup[i];
+    }
+    RestrictPhone(trie, testInput);
+    cout << endl;
+}
+
+
+void problem1(vector<vector<vector<double>>> segTemGroup,vector<vector<double>> testInput)
+{
+    DigitRecognition(DIGIT_NUM7, testInput, segTemGroup);
+    cout << endl;
+}
+
 // test segmental k-mean
 int main(){
 //    writeSeg();
@@ -85,20 +103,13 @@ int main(){
             }
         }
     }
-
-    
-    
     vector<vector<double>> testInput;
-    featureExtractionTwo(testInput, wavTestPath, txtTestPath);
-    Trie trie;
-    TrieNode* root = trie.getRoot();
-    for (int i = 0; i < MAX_BRANCH_NUM - 1; i++)
-    {
-        root->nextBranch[i]->segTemplate = segTemGroup[i];
-    }
-    RestrictPhone(trie, testInput);
-    cout << endl;
+//    featureExtractionTwo(testInput, wavTestPath, txtTestPath);
+    featureExtractionTwo(testInput, testPath, testPath);
     
+//    problem3(segTemGroup, testInput);
+    
+    problem1(segTemGroup, testInput);
     
     return 0;
 }
