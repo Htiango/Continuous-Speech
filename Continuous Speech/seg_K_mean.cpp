@@ -237,9 +237,8 @@ vector<vector<vector<int>>> getSegIndex(vector<vector<double>>& segmentTem, vect
     
     // count the number of frames in each segment and count the transfer number.
     for (int i = 0; i < temNum; i++) {
+        int segGap = 1;
         for (int j = 0; j < SEG_NUM; j++) {
-            int segGap = 1;
-            
             int segStart = segIndexPrev[i][j][0];
             if (segStart >= 0) {
                 int segEnd = segIndexPrev[i][j][1];
@@ -250,14 +249,15 @@ vector<vector<vector<int>>> getSegIndex(vector<vector<double>>& segmentTem, vect
                         countTransfer[j + 1][j] += 1;
                     }
                 }
-                
                 countTransfer[j - segGap + 1][j] += 1;
+                segGap = 1;
             }
             else{
-                segGap += 1;
+                segGap = 2;
             }
         }
     }
+
     
     
     // now we compute the sum of individual variance terms

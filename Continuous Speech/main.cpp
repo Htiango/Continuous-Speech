@@ -13,7 +13,7 @@
 
 using namespace std;
 
-string testPath = "/Users/hty/Desktop/1/record.wav";
+string testPath = "/Users/hty/Desktop/2/record.wav";
 
 string wavTestPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/record.wav";
 string txtTestPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/";
