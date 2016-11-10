@@ -185,19 +185,21 @@ void getSynDTWResult(){
 // segmental k-mean
 void getSegTem(){
     vector<vector<vector<double>>> segTemGroup;
+    vector<vector<vector<double>>> varianceTerm(TYPE_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
+    vector<vector<vector<int>>> countTransfer(TYPE_NUM, vector<vector<int>>(SEG_NUM + 1, vector<int>(SEG_NUM)));
     for (int i = 0; i < TYPE_NUM; i++) {
         vector<vector<vector<double>>> temGroup;
         for (int j = 0; j < TEM_NUM; j++) {
             cout << "-----------------------Template " << i << " Instance " << j <<"------------------------" << endl;
             string wavpath = wavTemPath1 +  to_string(i) + "/" + to_string(j)+ "/record.wav";
-//            capture(wavpath);
+            //            capture(wavpath);
             vector<vector<double>> temFeature;
             string txtpath = txtTemPath1 + to_string(i) + "/" + to_string(j) + "/";
             featureExtraction(temFeature, wavpath, txtpath);
             temGroup.push_back(temFeature);
         }
         vector<vector<double>> segTem;
-        segTem = dtw2hmm(temGroup);
+        segTem = dtw2hmm(temGroup, varianceTerm[i], countTransfer[i]);
         cout << "You have got the segment template!!!!!!!!!!!!!!!!!!!"<<endl;
         segTemGroup.push_back(segTem);
     }
@@ -216,12 +218,12 @@ void getSegTem(){
             string txtPath = txtInputPath1 + to_string(i) + "/" + to_string(j) + "/";
             getInput(input, wavPath, txtPath);
             
-            double minDtw = dtw(input, segTemGroup[0]);
+            double minDtw = segmentalDtw(input, segTemGroup[0], varianceTerm[0], countTransfer[0]);
             int bestIndex = 0;
             cout << "The input is " << i << ", the dtwValue with 0.0 is " << minDtw << endl;
             
             for (unsigned int k = 1; k < TYPE_NUM; k++) {
-                double dtwValue = dtw(input, segTemGroup[k]);
+                double dtwValue = segmentalDtw(input, segTemGroup[k], varianceTerm[k], countTransfer[k]);
                 cout << "The input is " << i << ", the dtwValue with "<< k  << " is " << dtwValue << endl;
                 if (dtwValue < minDtw) {
                     bestIndex = k;
@@ -244,56 +246,6 @@ void getSegTem(){
     cout << "The correct matching input number is "<< correctNum << endl;
     cout << "The accuracy of the matching is " << (1.0 * correctNum / (TYPE_NUM * INPUT_NUM)) << endl;
     
-    
 }
 
-
-
-// test segmental k-mean
-void testSegTem(){
-    vector<vector<vector<double>>> segTemGroup;
-    for (int i = 0; i < TYPE_NUM; i++) {
-        vector<vector<vector<double>>> temGroup;
-        for (int j = 0; j < TEM_NUM; j++) {
-            cout << "-----------------------Template " << i << " Instance " << j <<"------------------------" << endl;
-            string wavpath = wavTemPath1 +  to_string(i) + "/" + to_string(j)+ "/record.wav";
-            //            capture(wavpath);
-            vector<vector<double>> temFeature;
-            string txtpath = txtTemPath1 + to_string(i) + "/" + to_string(j) + "/";
-            featureExtraction(temFeature, wavpath, txtpath);
-            temGroup.push_back(temFeature);
-        }
-        vector<vector<double>> segTem;
-        segTem = dtw2hmm(temGroup);
-        cout << "You have got the segment template!!!!!!!!!!!!!!!!!!!"<<endl;
-        segTemGroup.push_back(segTem);
-    }
-    
-    
-    cout << "Please enter any key to start to input. (Enter 0 to exit)" << endl;
-    int i = getchar();
-    
-    while (i != 48) {
-        vector<vector<double>> input;
-        string wavPath = wavTestPath1 + "/test/record.wav";
-        string txtPath = txtTestPath1 + "/test/";
-        featureExtraction(input, wavPath, txtPath);
-        
-        double minDtw = dtw(input, segTemGroup[0]);
-        int bestIndex = 0;
-        cout << "The dtwValue with 0 is " << minDtw << endl;
-        
-        for (unsigned int k = 1; k < TYPE_NUM; k++) {
-            double dtwValue = dtw(input, segTemGroup[k]);
-            cout << "The dtwValue with "<< k  << " is " << dtwValue << endl;
-            if (dtwValue < minDtw) {
-                bestIndex = k;
-                minDtw = dtwValue;
-            }
-        }
-        cout << "The match template is " << bestIndex  << ". Their dtw value is "<< minDtw <<  endl;
-        cout << endl;
-    }
-    
-}
 

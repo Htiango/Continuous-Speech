@@ -10,13 +10,20 @@
 		0515A0441DCB16C600E737C9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A0431DCB16C600E737C9 /* main.cpp */; };
 		0515A05C1DCB1AC800E737C9 /* ContinuousPhone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A04A1DCB1AC800E737C9 /* ContinuousPhone.cpp */; };
 		0515A05D1DCB1AC800E737C9 /* dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A04C1DCB1AC800E737C9 /* dtw.cpp */; };
-		0515A05E1DCB1AC800E737C9 /* dtwTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A04E1DCB1AC800E737C9 /* dtwTest.cpp */; };
 		0515A05F1DCB1AC800E737C9 /* featureExtraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A0501DCB1AC800E737C9 /* featureExtraction.cpp */; };
 		0515A0601DCB1AC800E737C9 /* fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A0521DCB1AC800E737C9 /* fft.cpp */; };
 		0515A0611DCB1AC800E737C9 /* framePrune.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A0541DCB1AC800E737C9 /* framePrune.cpp */; };
 		0515A0621DCB1AC800E737C9 /* readwave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A0561DCB1AC800E737C9 /* readwave.cpp */; };
 		0515A0631DCB1AC800E737C9 /* seg_K_mean.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A0581DCB1AC800E737C9 /* seg_K_mean.cpp */; };
 		0515A0641DCB1AC800E737C9 /* Trie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A05A1DCB1AC800E737C9 /* Trie.cpp */; };
+		0564447A1DD1EECD006CC1B5 /* captureData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 056444761DD1EECD006CC1B5 /* captureData.cpp */; };
+		0564447C1DD1EECD006CC1B5 /* libportaudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 056444791DD1EECD006CC1B5 /* libportaudio.a */; };
+		056444811DD1F45C006CC1B5 /* portaudio.h in Frameworks */ = {isa = PBXBuildFile; fileRef = 0564447E1DD1F003006CC1B5 /* portaudio.h */; };
+		056444841DD1F4A7006CC1B5 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056444831DD1F4A7006CC1B5 /* CoreAudio.framework */; };
+		056444871DD1F4BB006CC1B5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056444851DD1F4BB006CC1B5 /* AudioToolbox.framework */; };
+		056444881DD1F4BB006CC1B5 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056444861DD1F4BB006CC1B5 /* AudioUnit.framework */; };
+		0564448A1DD1F4C2006CC1B5 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056444891DD1F4C2006CC1B5 /* CoreServices.framework */; };
+		0564448C1DD1F4C9006CC1B5 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0564448B1DD1F4C9006CC1B5 /* Carbon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,8 +45,6 @@
 		0515A04B1DCB1AC800E737C9 /* ContinuousPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinuousPhone.h; sourceTree = "<group>"; };
 		0515A04C1DCB1AC800E737C9 /* dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dtw.cpp; sourceTree = "<group>"; };
 		0515A04D1DCB1AC800E737C9 /* dtw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dtw.h; sourceTree = "<group>"; };
-		0515A04E1DCB1AC800E737C9 /* dtwTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dtwTest.cpp; sourceTree = "<group>"; };
-		0515A04F1DCB1AC800E737C9 /* dtwTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dtwTest.h; sourceTree = "<group>"; };
 		0515A0501DCB1AC800E737C9 /* featureExtraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = featureExtraction.cpp; sourceTree = "<group>"; };
 		0515A0511DCB1AC800E737C9 /* featureExtraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = featureExtraction.h; sourceTree = "<group>"; };
 		0515A0521DCB1AC800E737C9 /* fft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fft.cpp; sourceTree = "<group>"; };
@@ -52,6 +57,16 @@
 		0515A0591DCB1AC800E737C9 /* seg_K_mean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = seg_K_mean.h; sourceTree = "<group>"; };
 		0515A05A1DCB1AC800E737C9 /* Trie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trie.cpp; sourceTree = "<group>"; };
 		0515A05B1DCB1AC800E737C9 /* Trie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trie.h; sourceTree = "<group>"; };
+		056444761DD1EECD006CC1B5 /* captureData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = captureData.cpp; sourceTree = "<group>"; };
+		056444771DD1EECD006CC1B5 /* captureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = captureData.h; sourceTree = "<group>"; };
+		056444791DD1EECD006CC1B5 /* libportaudio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libportaudio.a; sourceTree = "<group>"; };
+		0564447E1DD1F003006CC1B5 /* portaudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = portaudio.h; sourceTree = "<group>"; };
+		0564447F1DD1F390006CC1B5 /* libportaudio.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libportaudio.2.dylib; sourceTree = "<group>"; };
+		056444831DD1F4A7006CC1B5 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		056444851DD1F4BB006CC1B5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		056444861DD1F4BB006CC1B5 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		056444891DD1F4C2006CC1B5 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		0564448B1DD1F4C9006CC1B5 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +74,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0564448C1DD1F4C9006CC1B5 /* Carbon.framework in Frameworks */,
+				0564448A1DD1F4C2006CC1B5 /* CoreServices.framework in Frameworks */,
+				056444871DD1F4BB006CC1B5 /* AudioToolbox.framework in Frameworks */,
+				056444881DD1F4BB006CC1B5 /* AudioUnit.framework in Frameworks */,
+				056444841DD1F4A7006CC1B5 /* CoreAudio.framework in Frameworks */,
+				056444811DD1F45C006CC1B5 /* portaudio.h in Frameworks */,
+				0564447C1DD1EECD006CC1B5 /* libportaudio.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +92,7 @@
 			children = (
 				0515A0421DCB16C600E737C9 /* Continuous Speech */,
 				0515A0411DCB16C600E737C9 /* Products */,
+				056444821DD1F4A7006CC1B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,27 +107,50 @@
 		0515A0421DCB16C600E737C9 /* Continuous Speech */ = {
 			isa = PBXGroup;
 			children = (
+				0515A0431DCB16C600E737C9 /* main.cpp */,
 				0515A04A1DCB1AC800E737C9 /* ContinuousPhone.cpp */,
 				0515A04B1DCB1AC800E737C9 /* ContinuousPhone.h */,
 				0515A04C1DCB1AC800E737C9 /* dtw.cpp */,
 				0515A04D1DCB1AC800E737C9 /* dtw.h */,
-				0515A04E1DCB1AC800E737C9 /* dtwTest.cpp */,
-				0515A04F1DCB1AC800E737C9 /* dtwTest.h */,
+				0515A0581DCB1AC800E737C9 /* seg_K_mean.cpp */,
+				0515A0591DCB1AC800E737C9 /* seg_K_mean.h */,
 				0515A0501DCB1AC800E737C9 /* featureExtraction.cpp */,
 				0515A0511DCB1AC800E737C9 /* featureExtraction.h */,
 				0515A0521DCB1AC800E737C9 /* fft.cpp */,
 				0515A0531DCB1AC800E737C9 /* fft.h */,
 				0515A0541DCB1AC800E737C9 /* framePrune.cpp */,
 				0515A0551DCB1AC800E737C9 /* framePrune.h */,
-				0515A0561DCB1AC800E737C9 /* readwave.cpp */,
-				0515A0571DCB1AC800E737C9 /* readwave.h */,
-				0515A0581DCB1AC800E737C9 /* seg_K_mean.cpp */,
-				0515A0591DCB1AC800E737C9 /* seg_K_mean.h */,
 				0515A05A1DCB1AC800E737C9 /* Trie.cpp */,
 				0515A05B1DCB1AC800E737C9 /* Trie.h */,
-				0515A0431DCB16C600E737C9 /* main.cpp */,
+				056444761DD1EECD006CC1B5 /* captureData.cpp */,
+				056444771DD1EECD006CC1B5 /* captureData.h */,
+				0515A0561DCB1AC800E737C9 /* readwave.cpp */,
+				0515A0571DCB1AC800E737C9 /* readwave.h */,
+				0564447D1DD1EEDA006CC1B5 /* portaduio */,
 			);
 			path = "Continuous Speech";
+			sourceTree = "<group>";
+		};
+		0564447D1DD1EEDA006CC1B5 /* portaduio */ = {
+			isa = PBXGroup;
+			children = (
+				0564447F1DD1F390006CC1B5 /* libportaudio.2.dylib */,
+				056444791DD1EECD006CC1B5 /* libportaudio.a */,
+				0564447E1DD1F003006CC1B5 /* portaudio.h */,
+			);
+			name = portaduio;
+			sourceTree = "<group>";
+		};
+		056444821DD1F4A7006CC1B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0564448B1DD1F4C9006CC1B5 /* Carbon.framework */,
+				056444891DD1F4C2006CC1B5 /* CoreServices.framework */,
+				056444851DD1F4BB006CC1B5 /* AudioToolbox.framework */,
+				056444861DD1F4BB006CC1B5 /* AudioUnit.framework */,
+				056444831DD1F4A7006CC1B5 /* CoreAudio.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +216,9 @@
 				0515A0611DCB1AC800E737C9 /* framePrune.cpp in Sources */,
 				0515A0441DCB16C600E737C9 /* main.cpp in Sources */,
 				0515A0621DCB1AC800E737C9 /* readwave.cpp in Sources */,
+				0564447A1DD1EECD006CC1B5 /* captureData.cpp in Sources */,
 				0515A05C1DCB1AC800E737C9 /* ContinuousPhone.cpp in Sources */,
 				0515A05F1DCB1AC800E737C9 /* featureExtraction.cpp in Sources */,
-				0515A05E1DCB1AC800E737C9 /* dtwTest.cpp in Sources */,
 				0515A0641DCB1AC800E737C9 /* Trie.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +316,14 @@
 		0515A0481DCB16C600E737C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					/Users/hty/Desktop/Speech,
+					Recognition/project/project,
+					6/Continuous,
+					Speech/Continuous,
+					Speech,
+					"$(PROJECT_DIR)/Continuous\\ Speech",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -277,6 +331,14 @@
 		0515A0491DCB16C600E737C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					/Users/hty/Desktop/Speech,
+					Recognition/project/project,
+					6/Continuous,
+					Speech/Continuous,
+					Speech,
+					"$(PROJECT_DIR)/Continuous\\ Speech",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -300,6 +362,7 @@
 				0515A0491DCB16C600E737C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

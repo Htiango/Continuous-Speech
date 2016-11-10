@@ -259,7 +259,7 @@ double* getFftEnergy(double* frameData, int actualNumPerFrame) {
 /**
 *  get the mel-fre power spectrum
 *
-*  @param fftSample discrete frequency power spectrum after fft(the first half)
+*  @param fftSampleEnergy discrete frequency power spectrum after fft(the first half)
 *
 *  @return mel-fre power spectrum
 */
@@ -346,7 +346,7 @@ double* getMelLogEnergy(double* melEnergy) {
 /**
 *  do the DCT for each frame.
 *
-*  @param melEnergy        the log mel-fre power spectrum of a frame
+*  @param melLogEnergy        the log mel-fre power spectrum of a frame
 *
 *  @return         the 13-D DCT result
 */
@@ -505,70 +505,26 @@ void featureExtractionTwo(vector<vector<double>>& normDCT,  string& wav, string&
 		frameDCT[i] = getDCT(melLogEnergy[i]);
 	}
 
-    ofstream fileSample(filePath + "sample.txt");
-    ofstream filePreemphasized(filePath + "sample_after_preemphasize.txt");
-    ofstream fileFrame(filePath + "frameData.txt");
-    ofstream fileFrameEnergy(filePath + "frameEnergy.txt");
-    ofstream fileMelEnergy(filePath + "melEnergy.txt");
-    ofstream fileMelLogEnergy(filePath + "melLogEnergy.txt");
-    ofstream fileDCT(filePath + "DCT.txt");
-    ofstream fileNormDCT(filePath + "NormDCT.txt");
+    ofstream fileResult(filePath + "result.txt");
 
-	for (int i = 0; i < numSample; i++) {
-		fileSample << dataWave[i];
-		fileSample << " ";
-		filePreemphasized << waveDataAfter[i];
-		filePreemphasized << " ";
-	}
 //	delete[] dataWave;
 //	delete[] waveDataAfter;
 
-	for (int i = 0; i < frameNumber; i++) {
-
-		for (int j = 0; j < ACTUAL_SAMPLE_PER_FRAME; j++) {
-			fileFrame << frameData[i][j];
-			fileFrame << " ";
-		}
-
-		for (int k = 0; k < ACTUAL_SAMPLE_PER_FRAME / 2 + 1; k++) {
-			fileFrameEnergy << frameEnergy[i][k];
-			fileFrameEnergy << " ";
-		}
-
-		for (int l = 0; l < MEL_POINT; l++) {
-			fileMelEnergy << melEnergy[i][l];
-			fileMelEnergy << " ";
-			fileMelLogEnergy << melLogEnergy[i][l];
-			fileMelLogEnergy << " ";
-		}
-
-		for (int m = 0; m < DCT_DIMENSION; m++) {
-			fileDCT << frameDCT[i][m];
-			//            cout << frameDCT[i][m] << endl;
-			fileDCT << " ";
-		}
-
-		fileFrame << endl;
-		fileFrameEnergy << endl;
-		fileMelEnergy << endl;
-		fileMelLogEnergy << endl;
-		fileDCT << endl;
-	}
-    
-    
 
 	getNormalizedDCT(frameDCT);
 
-	for (int i = 0; i < frameNumber; i++) {
-
-		for (int j = 0; j < DCT_DIMENSION; j++) {
-			fileNormDCT << frameDCT[i][j] << " ";
-		}
-		fileNormDCT << endl;
-	}
 	cout << "frameNumber =  " << frameNumber << endl;
     
     DCTNorm(frameDCT, normDCT);
+    
+    for (int i = 0; i < frameNumber; i++) {
+        
+        for (int j = 0; j < DCT_DIMENSION * 3; j++) {
+            fileResult << normDCT[i][j] << " ";
+        }
+        fileResult << endl;
+    }
+
     
 }
 
@@ -623,71 +579,24 @@ void featureExtraction(vector<vector<double>>& normDCT, string& wav, string& fil
 		melLogEnergy[i] = getMelLogEnergy(melEnergy[i]);
 		frameDCT[i] = getDCT(melLogEnergy[i]);
 	}
+    
+    ofstream fileResult(filePath + "result.txt");
 
-	ofstream fileSample(filePath + "sample.txt");
-	ofstream filePreemphasized(filePath + "sample_after_preemphasize.txt");
-	ofstream fileFrame(filePath + "frameData.txt");
-	ofstream fileFrameEnergy(filePath + "frameEnergy.txt");
-	ofstream fileMelEnergy(filePath + "melEnergy.txt");
-	ofstream fileMelLogEnergy(filePath + "melLogEnergy.txt");
-	ofstream fileDCT(filePath + "DCT.txt");
-	ofstream fileNormDCT(filePath + "NormDCT.txt");
-
-	for (int i = 0; i < numSample; i++) {
-		fileSample << dataWave[i];
-		fileSample << " ";
-		filePreemphasized << waveDataAfter[i];
-		filePreemphasized << " ";
-	}
 	//	delete[] dataWave;
 	//	delete[] waveDataAfter;
 
-	for (int i = 0; i < frameNumber; i++) {
-
-		for (int j = 0; j < ACTUAL_SAMPLE_PER_FRAME; j++) {
-			fileFrame << frameData[i][j];
-			fileFrame << " ";
-		}
-
-		for (int k = 0; k < ACTUAL_SAMPLE_PER_FRAME / 2 + 1; k++) {
-			fileFrameEnergy << frameEnergy[i][k];
-			fileFrameEnergy << " ";
-		}
-
-		for (int l = 0; l < MEL_POINT; l++) {
-			fileMelEnergy << melEnergy[i][l];
-			fileMelEnergy << " ";
-			fileMelLogEnergy << melLogEnergy[i][l];
-			fileMelLogEnergy << " ";
-		}
-
-		for (int m = 0; m < DCT_DIMENSION; m++) {
-			fileDCT << frameDCT[i][m];
-			//            cout << frameDCT[i][m] << endl;
-			fileDCT << " ";
-		}
-
-		fileFrame << endl;
-		fileFrameEnergy << endl;
-		fileMelEnergy << endl;
-		fileMelLogEnergy << endl;
-		fileDCT << endl;
-	}
-
-
-
 	getNormalizedDCT(frameDCT);
 
-	for (int i = 0; i < frameNumber; i++) {
-
-		for (int j = 0; j < DCT_DIMENSION; j++) {
-			fileNormDCT << frameDCT[i][j] << " ";
-		}
-		fileNormDCT << endl;
-	}
 	cout << "frameNum =  " << frameNumber << endl;
 
 	DCTNorm(frameDCT, normDCT);
-
+    for (int i = 0; i < frameNumber; i++) {
+        
+        for (int j = 0; j < DCT_DIMENSION * 3; j++) {
+            fileResult << normDCT[i][j] << " ";
+        }
+        fileResult << endl;
+    }
+    
 }
 
