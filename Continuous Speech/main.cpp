@@ -39,6 +39,8 @@ string wavContinueTemPath = "/Users/hty/Desktop/Speech Recognition/project/proje
 string txtContinueTemPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/englishTem/requiredTem/";
 
 string txtIsolateFromConPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/englishTem/requiredTem/continue-isolatedword/segment.txt";
+string txtIsolateFromConPathVariance = "/Users/hty/Desktop/Speech Recognition/project/project 6/englishTem/requiredTem/continue-isolatedword/variance.txt";
+string txtIsolateFromConPathTransfer = "/Users/hty/Desktop/Speech Recognition/project/project 6/englishTem/requiredTem/continue-isolatedword/transfer.txt";
 
 //string wavTemPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/test 4.0/template";
 //string txtTemPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/test 4.0/template";
@@ -106,7 +108,7 @@ void writeSeg(string wavPath, string txtPath){
 }
 
 
-void problem3(vector<vector<vector<double>>> segTemGroup, vector<vector<double>> testInput, vector<vector<vector<double>>> varianceTerm, vector<vector<vector<int>>> countTransfer)
+void problem3(vector<vector<vector<double>>> segTemGroup, vector<vector<double>> testInput, vector<vector<vector<double>>>& varianceTerm, vector<vector<vector<int>>>& countTransfer, bool ifGussian)
 {
     Trie trie;
     TrieNode* root = trie.getRoot();
@@ -114,18 +116,29 @@ void problem3(vector<vector<vector<double>>> segTemGroup, vector<vector<double>>
     {
         root->nextBranch[i]->segTemplate = segTemGroup[i];
     }
-    RestrictPhone(trie, testInput, varianceTerm, countTransfer);
+    if (! ifGussian) {
+        RestrictPhone(trie, testInput, varianceTerm, countTransfer);
+    }
+    else{
+        RestrictPhoneGuassian(trie, testInput, varianceTerm, countTransfer);
+    }
     cout << endl;
 }
 
 
-void problem1(vector<vector<vector<double>>> segTemGroup,vector<vector<double>> testInput, vector<vector<vector<double>>> varianceTerm, vector<vector<vector<int>>> countTransfer)
+void problem1(vector<vector<vector<double>>> segTemGroup,vector<vector<double>> testInput, vector<vector<vector<double>>>& varianceTerm, vector<vector<vector<int>>>& countTransfer, bool ifGussian)
 {
-    DigitRecognition(DIGIT_NUM4, testInput, segTemGroup, varianceTerm, countTransfer);
+    if (! ifGussian) {
+        DigitRecognition(DIGIT_NUM4, testInput, segTemGroup, varianceTerm, countTransfer);
+    }
+    else{
+        DigitRecognitionGussian(DIGIT_NUM4, testInput, segTemGroup, varianceTerm, countTransfer);
+    }
+    
     cout << endl;
 }
 
-void getResult(){
+void getResult(bool ifGuassian){
     vector<vector<vector<double>>> segTemGroup(TYPE_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
     vector<vector<vector<double>>> varianceTerm(TYPE_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
     vector<vector<vector<int>>> countTransfer(TYPE_NUM, vector<vector<int>>(SEG_NUM + 1, vector<int>(SEG_NUM)));
@@ -159,11 +172,11 @@ void getResult(){
     featureExtractionTwo(testInput, testPath, testTxtPath);
     
     cout << "problem3 result : ";
-    problem3(segTemGroup, testInput, varianceTerm, countTransfer);
+    problem3(segTemGroup, testInput, varianceTerm, countTransfer,ifGuassian);
     
     cout << endl;
     cout << "problem1 result : ";
-    problem1(segTemGroup, testInput, varianceTerm, countTransfer);
+    problem1(segTemGroup, testInput, varianceTerm, countTransfer, ifGuassian);
 }
 
 void trainDigits() {
@@ -233,22 +246,44 @@ void trainDigits() {
     vector<vector<vector<double>>> variance(TRAIN_TYPE, vector<vector<double>>(DIGIT_NUM * SEG_NUM, vector<double>(DIMENSION)));
     vector<vector<vector<int>>> transfer(TRAIN_TYPE, vector<vector<int>>(DIGIT_NUM * SEG_NUM + 1, vector<int>(DIGIT_NUM * SEG_NUM)));
     vector<vector<vector<vector<int>>>> resultState = conDtw2hmm(input, allState, variance, transfer);
-    vector<vector<vector<double>>>resultSeg = getSegFrame(resultState, input);
     
-    ofstream out(txtIsolateFromConPath);
+    cout << "Finish segmental K-mean"<< endl;
+    
+    vector<vector<vector<double>>> varianceSeg(DIGIT_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
+    vector<vector<vector<int>>> transferSeg(DIGIT_NUM, vector<vector<int>>(SEG_NUM + 1, vector<int>(SEG_NUM)));
+    vector<vector<vector<double>>>resultSeg = getSegFrame(resultState, input, varianceSeg, transferSeg);
+
+    ofstream out1(txtIsolateFromConPath);
+    ofstream out2(txtIsolateFromConPathVariance);
+    ofstream out3(txtIsolateFromConPathTransfer);
     for(int i = 0; i < DIGIT_NUM; i++)
     {
         for(int j = 0; j < SEG_NUM; j++)
         {
             for (int k = 0; k < DIMENSION; k++)
             {
-                out << resultSeg[i][j][k] << " ";
+                out1 << resultSeg[i][j][k] << " ";
+                out2 << varianceSeg[i][j][k] << " ";
             }
-            out << endl;
+            out1 << endl;
+            out2 << endl;
         }
-        out << endl;
+        
+        for (int j = 0; j < SEG_NUM + 1; j++)
+        {
+            for (int k = 0; k < SEG_NUM; k++) {
+                out3 << transferSeg[i][j][k] << " ";
+            }
+            out3 << endl;
+        }
+        
+        out1 << endl;
+        out2 << endl;
+        out3 << endl;
     }
-    out.close();
+    out1.close();
+    out2.close();
+    out3.close();
     cout << endl;
 }
 
@@ -258,14 +293,14 @@ void record(){
     capture(filepath);
 }
 
-void readSeg(){
+void readSeg(bool ifGuassian){
     vector<vector<vector<double>>> segTemGroup(DIGIT_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
-//    vector<vector<vector<double>>> varianceTerm(TYPE_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
-//    vector<vector<vector<int>>> countTransfer(TYPE_NUM, vector<vector<int>>(SEG_NUM + 1, vector<int>(SEG_NUM)));
+    vector<vector<vector<double>>> varianceTerm(DIGIT_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
+    vector<vector<vector<int>>> countTransfer(DIGIT_NUM, vector<vector<int>>(SEG_NUM + 1, vector<int>(SEG_NUM)));
     
     ifstream in(txtIsolateFromConPath);
-//    ifstream in2(variancePath);
-//    ifstream in3(transferPath);
+    ifstream in2(variancePath);
+    ifstream in3(transferPath);
     for (int i = 0; i < TYPE_NUM; i++)
     {
         for (int j = 0; j < SEG_NUM; j++)
@@ -273,28 +308,28 @@ void readSeg(){
             for (int k = 0; k < DIMENSION; k++)
             {
                 in >> segTemGroup[i][j][k];
-//                in2 >> varianceTerm[i][j][k];
+                in2 >> varianceTerm[i][j][k];
             }
         }
-//        for (int j = 0; j < SEG_NUM + 1; j++) {
-//            for (int k = 0; k < SEG_NUM; k++) {
-//                in3 >> countTransfer[i][j][k];
-//            }
-//        }
+        for (int j = 0; j < SEG_NUM + 1; j++) {
+            for (int k = 0; k < SEG_NUM; k++) {
+                in3 >> countTransfer[i][j][k];
+            }
+        }
     }
     in.close();
-//    in2.close();
-//    in3.close();
+    in2.close();
+    in3.close();
     
     vector<vector<double>> testInput;
     //    featureExtractionTwo(testInput, wavTestPath, txtTestPath);
     featureExtractionTwo(testInput, testPath, testTxtPath);
-    
-    vector<vector<vector<double>>> varianceTerm;
-    vector<vector<vector<int>>> countTransfer;
+//    
+//    vector<vector<vector<double>>> varianceTerm;
+//    vector<vector<vector<int>>> countTransfer;
     
     cout << "problem3 result : ";
-    problem3(segTemGroup, testInput, varianceTerm, countTransfer);
+    problem3(segTemGroup, testInput, varianceTerm, countTransfer, ifGuassian);
     
 }
 
@@ -304,10 +339,10 @@ int main(int argc, const char * argv[]) {
 
   
 //    trainDigits();
-    readSeg();
+    readSeg(true);
 //    record();
     
-    getResult();
+//    getResult();
     
     return 0;
 }

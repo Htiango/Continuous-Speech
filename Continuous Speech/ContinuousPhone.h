@@ -8,7 +8,7 @@
 #include "featureExtraction.h"
 #include "seg_K_mean.h"
 
-#define PENALTY  (5)
+#define PENALTY  (150)
 #define TYPE_NUM    (10)
 #define TEM_NUM     (5)
 #define INPUT_NUM   (10)
@@ -25,7 +25,9 @@
 
 double Dis(vector<double>& matrix1, vector<double>& matrix2);
 double costUtil(vector<double>& vec, double c, int& pos);
+
 stack<int> RestrictPhone(Trie& trie, vector<vector<double>>& input, vector<vector<vector<double>>>& varianceTerm, vector<vector<vector<int>>>& countTransfer);
+stack<int> RestrictPhoneGuassian(Trie& trie, vector<vector<double>>& input, vector<vector<vector<double>>>& varianceTerm, vector<vector<vector<int>>>&countTransfer);
 
 stack<int> backTrace(vector<vector<double>>& input, vector<vector<vector<int>>>& backTable, vector<double>& last);
 
@@ -35,9 +37,11 @@ vector<vector<int>> getStateIndex(int digit_num, vector<vector<vector<double>>>&
 
 vector<vector<vector<vector<int>>>> getAllStateIndex(int digit_num, vector<vector<vector<double>>>& segTemGroup, vector<vector<vector<vector<double>>>>& input, vector<vector<vector<double>>>& varianceTerm, vector<vector<vector<int>>>& countTransfer);
 
-vector<vector<vector<double>>> getSegFrame(vector<vector<vector<vector<int>>>>& allState, vector<vector<vector<vector<double>>>>& input);
+vector<vector<vector<double>>> getSegFrame(vector<vector<vector<vector<int>>>>& allState, vector<vector<vector<vector<double>>>>& input, vector<vector<vector<double>>>& variance, vector<vector<vector<int>>>& transfer);
 
 stack<int> DigitRecognition(int digit_num, vector<vector<double>>& input, vector<vector<vector<double>>>& segTemGroup, vector<vector<vector<double>>>& varianceTerm, vector<vector<vector<int>>>& countTransfer);
+
+stack<int> DigitRecognitionGussian(int digit_num, vector<vector<double>>& input, vector<vector<vector<double>>>& segTemGroup, vector<vector<vector<double>>>&varianceTerm, vector<vector<vector<int>>>& countTransfer);
 
 
 #endif
