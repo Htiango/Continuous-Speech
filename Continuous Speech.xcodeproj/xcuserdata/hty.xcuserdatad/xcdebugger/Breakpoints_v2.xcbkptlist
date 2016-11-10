@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500396766.311688"
+            timestampString = "500447849.090464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "992"
-            endingLineNumber = "992">
+            startingLineNumber = "960"
+            endingLineNumber = "960">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500396766.311688"
+            timestampString = "500447849.090464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "999"
-            endingLineNumber = "999">
+            startingLineNumber = "838"
+            endingLineNumber = "838">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -38,11 +38,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500396766.311688"
+            timestampString = "500447849.090464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1016"
-            endingLineNumber = "1016">
+            startingLineNumber = "839"
+            endingLineNumber = "839">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -52,109 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500396766.311688"
+            timestampString = "500447849.090464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "856"
-            endingLineNumber = "856">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500396766.311688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "857"
-            endingLineNumber = "857">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500396766.311688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "850"
-            endingLineNumber = "850">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500396766.311688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1007"
-            endingLineNumber = "1007">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500396766.311688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1008"
-            endingLineNumber = "1008">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500396766.311688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "998"
-            endingLineNumber = "998">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500396766.311688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1010"
-            endingLineNumber = "1010">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500396766.311688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1015"
-            endingLineNumber = "1015">
+            startingLineNumber = "832"
+            endingLineNumber = "832">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -164,11 +66,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
+            timestampString = "500447176.810086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
             landmarkType = "9">
          </BreakpointContent>
@@ -180,11 +82,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
+            timestampString = "500447176.810086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
             landmarkType = "9">
          </BreakpointContent>
@@ -196,11 +98,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500396766.311688"
+            timestampString = "500447849.090464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "867"
-            endingLineNumber = "867">
+            startingLineNumber = "849"
+            endingLineNumber = "849">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -210,11 +112,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500396766.311688"
+            timestampString = "500447849.090464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "848"
-            endingLineNumber = "848">
+            startingLineNumber = "830"
+            endingLineNumber = "830">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -240,11 +142,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/main.cpp"
-            timestampString = "500393972.884725"
+            timestampString = "500462195.097958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
             landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "9">
          </BreakpointContent>
@@ -272,55 +174,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "447"
-            endingLineNumber = "447"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "442"
-            endingLineNumber = "442"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "452"
-            endingLineNumber = "452"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
+            timestampString = "500447176.810086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "448"
@@ -336,7 +190,39 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
+            timestampString = "500447176.810086"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "443"
+            endingLineNumber = "443"
+            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/seg_K_mean.cpp"
+            timestampString = "500447176.810086"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
+            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/seg_K_mean.cpp"
+            timestampString = "500447176.810086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "449"
@@ -352,11 +238,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
+            timestampString = "500447176.810086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
+            startingLineNumber = "450"
+            endingLineNumber = "450"
+            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/seg_K_mean.cpp"
+            timestampString = "500447176.810086"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "320"
+            endingLineNumber = "320"
             landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
             landmarkType = "9">
          </BreakpointContent>
@@ -368,27 +270,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
+            timestampString = "500447176.810086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
-            landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "322"
-            endingLineNumber = "322"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
             landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
             landmarkType = "9">
          </BreakpointContent>
@@ -704,11 +590,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500403209.46221"
+            timestampString = "500447176.810086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "getOneSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; temp1, vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, vector&lt;vector&lt;int&gt;&gt;&amp; segIndexPrev, int state_num)"
             landmarkType = "9">
          </BreakpointContent>
@@ -720,71 +606,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "450"
-            endingLineNumber = "450"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "459"
-            endingLineNumber = "459"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "456"
-            endingLineNumber = "456"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "454"
-            endingLineNumber = "454"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
+            timestampString = "500447176.810086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "451"
@@ -800,11 +622,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500442201.90893"
+            timestampString = "500447176.810086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "453"
-            endingLineNumber = "453"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
+            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/seg_K_mean.cpp"
+            timestampString = "500447176.810086"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "457"
+            endingLineNumber = "457"
+            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/seg_K_mean.cpp"
+            timestampString = "500447176.810086"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "455"
+            endingLineNumber = "455"
+            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/seg_K_mean.cpp"
+            timestampString = "500447176.810086"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "452"
+            endingLineNumber = "452"
+            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/seg_K_mean.cpp"
+            timestampString = "500447176.810086"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "454"
+            endingLineNumber = "454"
             landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
             landmarkType = "9">
          </BreakpointContent>
@@ -822,6 +708,102 @@
             startingLineNumber = "228"
             endingLineNumber = "228"
             landmarkName = "trainDigits()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/seg_K_mean.cpp"
+            timestampString = "500460232.552722"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
+            landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/seg_K_mean.cpp"
+            timestampString = "500460263.669329"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/seg_K_mean.cpp"
+            timestampString = "500460640.659537"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
+            landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500461011.01437"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "542"
+            endingLineNumber = "542"
+            landmarkName = "getSegFrame(vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt;&amp; allState, vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt;&amp; input)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500461195.770792"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "566"
+            endingLineNumber = "566"
+            landmarkName = "getSegFrame(vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt;&amp; allState, vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt;&amp; input)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Continuous Speech/ContinuousPhone.cpp"
+            timestampString = "500461335.064047"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "582"
+            endingLineNumber = "582"
+            landmarkName = "getSegFrame(vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt;&amp; allState, vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt;&amp; input)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

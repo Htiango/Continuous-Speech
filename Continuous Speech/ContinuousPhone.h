@@ -8,7 +8,7 @@
 #include "featureExtraction.h"
 #include "seg_K_mean.h"
 
-#define PENALTY  (0)
+#define PENALTY  (5)
 #define TYPE_NUM    (10)
 #define TEM_NUM     (5)
 #define INPUT_NUM   (10)
@@ -38,6 +38,7 @@ vector<vector<vector<vector<int>>>> getAllStateIndex(int digit_num, vector<vecto
 vector<vector<vector<double>>> getSegFrame(vector<vector<vector<vector<int>>>>& allState, vector<vector<vector<vector<double>>>>& input);
 
 stack<int> DigitRecognition(int digit_num, vector<vector<double>>& input, vector<vector<vector<double>>>& segTemGroup, vector<vector<vector<double>>>& varianceTerm, vector<vector<vector<int>>>& countTransfer);
+
 
 #endif
 

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0515A0441DCB16C600E737C9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A0431DCB16C600E737C9 /* main.cpp */; };
 		0515A05C1DCB1AC800E737C9 /* ContinuousPhone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A04A1DCB1AC800E737C9 /* ContinuousPhone.cpp */; };
-		0515A05D1DCB1AC800E737C9 /* dtw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A04C1DCB1AC800E737C9 /* dtw.cpp */; };
 		0515A05F1DCB1AC800E737C9 /* featureExtraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A0501DCB1AC800E737C9 /* featureExtraction.cpp */; };
 		0515A0601DCB1AC800E737C9 /* fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A0521DCB1AC800E737C9 /* fft.cpp */; };
 		0515A0611DCB1AC800E737C9 /* framePrune.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0515A0541DCB1AC800E737C9 /* framePrune.cpp */; };
@@ -43,8 +42,6 @@
 		0515A0431DCB16C600E737C9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		0515A04A1DCB1AC800E737C9 /* ContinuousPhone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ContinuousPhone.cpp; sourceTree = "<group>"; };
 		0515A04B1DCB1AC800E737C9 /* ContinuousPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinuousPhone.h; sourceTree = "<group>"; };
-		0515A04C1DCB1AC800E737C9 /* dtw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dtw.cpp; sourceTree = "<group>"; };
-		0515A04D1DCB1AC800E737C9 /* dtw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dtw.h; sourceTree = "<group>"; };
 		0515A0501DCB1AC800E737C9 /* featureExtraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = featureExtraction.cpp; sourceTree = "<group>"; };
 		0515A0511DCB1AC800E737C9 /* featureExtraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = featureExtraction.h; sourceTree = "<group>"; };
 		0515A0521DCB1AC800E737C9 /* fft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fft.cpp; sourceTree = "<group>"; };
@@ -110,8 +107,6 @@
 				0515A0431DCB16C600E737C9 /* main.cpp */,
 				0515A04A1DCB1AC800E737C9 /* ContinuousPhone.cpp */,
 				0515A04B1DCB1AC800E737C9 /* ContinuousPhone.h */,
-				0515A04C1DCB1AC800E737C9 /* dtw.cpp */,
-				0515A04D1DCB1AC800E737C9 /* dtw.h */,
 				0515A0581DCB1AC800E737C9 /* seg_K_mean.cpp */,
 				0515A0591DCB1AC800E737C9 /* seg_K_mean.h */,
 				0515A0501DCB1AC800E737C9 /* featureExtraction.cpp */,
@@ -212,7 +207,6 @@
 			files = (
 				0515A0631DCB1AC800E737C9 /* seg_K_mean.cpp in Sources */,
 				0515A0601DCB1AC800E737C9 /* fft.cpp in Sources */,
-				0515A05D1DCB1AC800E737C9 /* dtw.cpp in Sources */,
 				0515A0611DCB1AC800E737C9 /* framePrune.cpp in Sources */,
 				0515A0441DCB16C600E737C9 /* main.cpp in Sources */,
 				0515A0621DCB1AC800E737C9 /* readwave.cpp in Sources */,

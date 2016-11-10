@@ -26,9 +26,9 @@ string txtTestPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/";
 
 
 //used to save segment result
-string segmentPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/segment.txt";
-string variancePath = "/Users/hty/Desktop/Speech Recognition/project/project 6/variance.txt";
-string transferPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/countTransfer.txt";
+string segmentPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/englishTem/isolateTem/segment.txt";
+string variancePath = "/Users/hty/Desktop/Speech Recognition/project/project 6/englishTem/isolateTem/variance.txt";
+string transferPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/englishTem/isolateTem/countTransfer.txt";
 
 
 string wavTemPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/englishTem/isolateTem/";
@@ -121,7 +121,7 @@ void problem3(vector<vector<vector<double>>> segTemGroup, vector<vector<double>>
 
 void problem1(vector<vector<vector<double>>> segTemGroup,vector<vector<double>> testInput, vector<vector<vector<double>>> varianceTerm, vector<vector<vector<int>>> countTransfer)
 {
-    DigitRecognition(DIGIT_NUM7, testInput, segTemGroup, varianceTerm, countTransfer);
+    DigitRecognition(DIGIT_NUM4, testInput, segTemGroup, varianceTerm, countTransfer);
     cout << endl;
 }
 
@@ -258,16 +258,56 @@ void record(){
     capture(filepath);
 }
 
+void readSeg(){
+    vector<vector<vector<double>>> segTemGroup(DIGIT_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
+//    vector<vector<vector<double>>> varianceTerm(TYPE_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
+//    vector<vector<vector<int>>> countTransfer(TYPE_NUM, vector<vector<int>>(SEG_NUM + 1, vector<int>(SEG_NUM)));
+    
+    ifstream in(txtIsolateFromConPath);
+//    ifstream in2(variancePath);
+//    ifstream in3(transferPath);
+    for (int i = 0; i < TYPE_NUM; i++)
+    {
+        for (int j = 0; j < SEG_NUM; j++)
+        {
+            for (int k = 0; k < DIMENSION; k++)
+            {
+                in >> segTemGroup[i][j][k];
+//                in2 >> varianceTerm[i][j][k];
+            }
+        }
+//        for (int j = 0; j < SEG_NUM + 1; j++) {
+//            for (int k = 0; k < SEG_NUM; k++) {
+//                in3 >> countTransfer[i][j][k];
+//            }
+//        }
+    }
+    in.close();
+//    in2.close();
+//    in3.close();
+    
+    vector<vector<double>> testInput;
+    //    featureExtractionTwo(testInput, wavTestPath, txtTestPath);
+    featureExtractionTwo(testInput, testPath, testTxtPath);
+    
+    vector<vector<vector<double>>> varianceTerm;
+    vector<vector<vector<int>>> countTransfer;
+    
+    cout << "problem3 result : ";
+    problem3(segTemGroup, testInput, varianceTerm, countTransfer);
+    
+}
+
 // test segmental k-mean
 int main(int argc, const char * argv[]) {
 //    writeSeg(wavTemPath, txtTemPath);    // read in the isolated word
 
   
-    trainDigits();
-    
+//    trainDigits();
+    readSeg();
 //    record();
     
-//    getResult();
+    getResult();
     
     return 0;
 }

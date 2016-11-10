@@ -112,30 +112,30 @@ vector<vector<int>> getOneSegIndex(vector<vector<double>>& temp1, vector<vector<
     
     prevCol = colMax;
     prevCol[0] = nodeCost(temp1[0], segmentTem[0], varianceTerm[0]) + edgeCost(0, countTransfer[0]);
-    prevCol[1] = nodeCost(temp1[0], segmentTem[1], varianceTerm[1]) + edgeCost(1, countTransfer[0]);
+//    prevCol[1] = nodeCost(temp1[0], segmentTem[1], varianceTerm[1]) + edgeCost(1, countTransfer[0]);
     costMap[0] = prevCol;
     
     
     // get the best cost and the full map of the cost value
     for (int i = 1; i < frameNum; i++) {
-        int top = min({ 2 * ( i + 1), state_num});
+        int top = min({ ( i + 1), state_num});
         col = colMax;
         
         for (int j = 0; j < top; j++) {
             if (j == 0) {
                 col[j] = prevCol[j] + nodeCost(temp1[i], segmentTem[j], varianceTerm[j]) + edgeCost(j, countTransfer[j + 1]);
             }
-            else if (j == 1) {
+            else {
                 double cost1 = prevCol[j - 1] + edgeCost(j, countTransfer[j]);
                 double cost2 = prevCol[j] + edgeCost(j, countTransfer[j + 1]);
                 col[j] = min({cost1, cost2}) + nodeCost(temp1[i], segmentTem[j], varianceTerm[j]);
             }
-            else{
-                double cost1 = prevCol[j - 2] + edgeCost(j, countTransfer[j - 1]);
-                double cost2 = prevCol[j - 1] + edgeCost(j, countTransfer[j]);
-                double cost3 = prevCol[j] + edgeCost(j, countTransfer[j + 1]);
-                col[j] = min({cost1, cost2, cost3}) + nodeCost(temp1[i], segmentTem[j], varianceTerm[j]);
-            }
+//            else{
+//                double cost1 = prevCol[j - 2] + edgeCost(j, countTransfer[j - 1]);
+//                double cost2 = prevCol[j - 1] + edgeCost(j, countTransfer[j]);
+//                double cost3 = prevCol[j] + edgeCost(j, countTransfer[j + 1]);
+//                col[j] = min({cost1, cost2, cost3}) + nodeCost(temp1[i], segmentTem[j], varianceTerm[j]);
+//            }
         }
         costMap[i] = col;
         col.swap(prevCol);
@@ -148,26 +148,26 @@ vector<vector<int>> getOneSegIndex(vector<vector<double>>& temp1, vector<vector<
     
     // do the backtracing
     for (int i = frameNum - 2; i >= 0; i--) {
-        double cost1, cost2, cost3;
+        double cost1, cost2;
         double minCost;
-        if (dummy_index > 1) {
-            cost1 = costMap[i][dummy_index];
-            cost2 = costMap[i][dummy_index - 1];
-            cost3 = costMap[i][dummy_index - 2];
-            minCost = min({cost1,cost2,cost3});
-            if (minCost == cost2) {
-                dummy_index -= 1;
-                dummy_segIndex.push_back({i + 1 , dummy_end});
-                dummy_end = i;
-            }
-            else if (minCost == cost3){
-                dummy_index -= 2;
-                dummy_segIndex.push_back({i + 1, dummy_end});
-                dummy_segIndex.push_back({-1 , -1});
-                dummy_end = i;
-            }
-        }
-        else if (dummy_index == 1){
+//        if (dummy_index > 1) {
+//            cost1 = costMap[i][dummy_index];
+//            cost2 = costMap[i][dummy_index - 1];
+//            cost3 = costMap[i][dummy_index - 2];
+//            minCost = min({cost1,cost2,cost3});
+//            if (minCost == cost2) {
+//                dummy_index -= 1;
+//                dummy_segIndex.push_back({i + 1 , dummy_end});
+//                dummy_end = i;
+//            }
+//            else if (minCost == cost3){
+//                dummy_index -= 2;
+//                dummy_segIndex.push_back({i + 1, dummy_end});
+//                dummy_segIndex.push_back({-1 , -1});
+//                dummy_end = i;
+//            }
+//        }
+        if (dummy_index >= 1){
             cost1 = costMap[i][dummy_index];
             cost2 = costMap[i][dummy_index - 1];
             minCost = min({cost1,cost2});
@@ -179,14 +179,15 @@ vector<vector<int>> getOneSegIndex(vector<vector<double>>& temp1, vector<vector<
         }
     }
     
-    if (dummy_index != 0) {
-        dummy_segIndex.push_back({0, dummy_end});
-        dummy_segIndex.push_back({-1,-1});
-    }
-    else{
-        dummy_segIndex.push_back({0, dummy_end});
-    }
+//    if (dummy_index != 0) {
+//        dummy_segIndex.push_back({0, dummy_end});
+//        dummy_segIndex.push_back({-1,-1});
+//    }
+//    else{
+//        dummy_segIndex.push_back({0, dummy_end});
+//    }
     
+    dummy_segIndex.push_back({0, dummy_end});
     
     for (int i = 0; i < state_num; i++) {
         temSegIndex.push_back(dummy_segIndex[state_num - 1 - i]) ;
@@ -299,7 +300,7 @@ vector<vector<vector<int>>> getSegIndex(vector<vector<double>>& segmentTem, vect
             int segStart = segIndexPrev[k][j][0];
             if (segStart >= 0 ) {
                 int segEnd = segIndexPrev[k][j][1];
-                for (int i = segStart; i < segEnd; i++) {
+                for (int i = segStart; i <= segEnd; i++) {
                     for (int l = 0; l < DIMENSION; l++) {
                         varianceTerm[j][l] += pow(temGroup[k][i][l] - segmentTem[j][l], 2);
                     }
@@ -395,11 +396,11 @@ double segmentalDtw(vector<vector<double>>& inputAduio, vector<vector<double>>& 
     prevCol = colMax;
     
     prevCol[0] = nodeCost(inputAduio[0], temAduio[0], varianceTerm[0]) + edgeCost(0, countTransfer[0]);
-    prevCol[1] = nodeCost(inputAduio[0], temAduio[1], varianceTerm[0]) + edgeCost(1, countTransfer[0]);
+//    prevCol[1] = nodeCost(inputAduio[0], temAduio[1], varianceTerm[0]) + edgeCost(1, countTransfer[0]);
     
     for (unsigned int i = 1; i < inputFrameNum; i++) {
         
-        unsigned int temp = min({2 * (i + 1), temFrameNum});
+        unsigned int temp = min({(i + 1), temFrameNum});
         col = colMax;
         
         for (unsigned int j = 0; j < temp; j++) {
@@ -408,17 +409,17 @@ double segmentalDtw(vector<vector<double>>& inputAduio, vector<vector<double>>& 
                 col[j] = prevCol[j] + nodeCost(inputAduio[i], temAduio[j], varianceTerm[j]) + edgeCost(j, countTransfer[j + 1]);
             }
             
-            else if (j == 1){
+            else {
                 double cost1 = prevCol[j - 1] + edgeCost(j, countTransfer[j]);
                 double cost2 = prevCol[j] + edgeCost(j, countTransfer[j + 1]);
                 col[j] = min({cost1, cost2}) + nodeCost(inputAduio[i], temAduio[j], varianceTerm[j]);
             }
-            else{
-                double cost1 = prevCol[j - 2] + edgeCost(j, countTransfer[j - 1]);
-                double cost2 = prevCol[j - 1] + edgeCost(j, countTransfer[j]);
-                double cost3 = prevCol[j] + edgeCost(j, countTransfer[j + 1]);
-                col[j] = min({cost1, cost2, cost3}) + nodeCost(inputAduio[i], temAduio[j], varianceTerm[j]);
-            }
+//            else{
+//                double cost1 = prevCol[j - 2] + edgeCost(j, countTransfer[j - 1]);
+//                double cost2 = prevCol[j - 1] + edgeCost(j, countTransfer[j]);
+//                double cost3 = prevCol[j] + edgeCost(j, countTransfer[j + 1]);
+//                col[j] = min({cost1, cost2, cost3}) + nodeCost(inputAduio[i], temAduio[j], varianceTerm[j]);
+//            }
         }
         
         col.swap(prevCol);
