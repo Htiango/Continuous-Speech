@@ -7,13 +7,17 @@
 //
 
 #include <iostream>
+#include <dirent.h>
+#include <stdio.h>
+#include <unistd.h>
 #include <fstream>
 #include "ContinuousPhone.h"
 #include "readwave.h"
 #include "seg_K_mean.h"
 #include "captureData.h"
 #include "portaudio.h"
-#include "featureExtraction.h"   
+#include "featureExtractionOld.h"
+#include "featureExtractionNew.h"
 
 using namespace std;
 
@@ -42,6 +46,13 @@ string txtIsolateFromConPath = "/Users/hty/Desktop/Speech Recognition/project/pr
 string txtIsolateFromConPathVariance = "/Users/hty/Desktop/Speech Recognition/project/project 6/englishTem/requiredTem/continue-isolatedword/variance.txt";
 string txtIsolateFromConPathTransfer = "/Users/hty/Desktop/Speech Recognition/project/project 6/englishTem/requiredTem/continue-isolatedword/transfer.txt";
 
+
+string trainWavPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/hwdata/train/";
+string trainTestWavPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/hwdata/test/";
+string trainTxtPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/hwdata/train_txt/";
+string trainTestTxtPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/hwdata/test_txt/";
+
+
 //string wavTemPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/test 4.0/template";
 //string txtTemPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/test 4.0/template";
 //string wavInputPath = "/Users/hty/Desktop/Speech Recognition/project/project 6/test 4.0/input";
@@ -63,7 +74,7 @@ void writeSeg(string wavPath, string txtPath){
             //            capture(wavpath);
             vector<vector<double>> temFeature;
             string txtpath = txtPath + to_string(i) + "/" + to_string(j) + "/";
-            featureExtraction(temFeature, wavpath, txtpath);
+            featureExtractionOld(temFeature, wavpath, txtpath);
             temGroup.push_back(temFeature);
         }
         vector<vector<double>> segTem;
@@ -169,7 +180,7 @@ void getResult(bool ifGuassian){
     
     vector<vector<double>> testInput;
 //    featureExtractionTwo(testInput, wavTestPath, txtTestPath);
-    featureExtractionTwo(testInput, testPath, testTxtPath);
+    featureExtractionTwoOld(testInput, testPath, testTxtPath);
     
     cout << "problem3 result : ";
     problem3(segTemGroup, testInput, varianceTerm, countTransfer,ifGuassian);
@@ -323,7 +334,7 @@ void readSeg(bool ifGuassian){
     
     vector<vector<double>> testInput;
     //    featureExtractionTwo(testInput, wavTestPath, txtTestPath);
-    featureExtractionTwo(testInput, testPath, testTxtPath);
+    featureExtractionTwoOld(testInput, testPath, testTxtPath);
 //    
 //    vector<vector<vector<double>>> varianceTerm;
 //    vector<vector<vector<int>>> countTransfer;
@@ -333,16 +344,75 @@ void readSeg(bool ifGuassian){
     
 }
 
+
+
+// first arg: path
+// second arg: file name vector
+// store in Allfiles.txt
+int testReadDir(vector<string>& files)
+{
+
+    int vec_len = (int)files.size();
+    for(int i = 0; i < vec_len; i++)
+    {
+        string wavpath = trainWavPath + files[i];
+        string txtpath = trainTxtPath + to_string(i);
+        vector<vector<double>> testInput;
+        featureExtractionNew(testInput, wavpath, txtpath);
+        cout << "file index : " << i << " file name: " << files[i] << endl;
+    }
+    return 0;
+}
+
+
+
+int testSingleWav(string index)
+{
+
+    string wavpath = trainWavPath + index;
+    string txtpath = trainTxtPath;
+    vector<vector<double>> testInput;
+    featureExtractionNew(testInput, wavpath, txtpath);
+    return 0;
+}
+
+
+void createDocList(std::vector<std::string> &doc_list){
+    int return_code;
+    DIR *dir;
+    struct dirent entry;
+    struct dirent *res;
+    string real_dir = trainWavPath;//搜索的目录
+    if ((dir = opendir(real_dir.c_str())) != NULL) {//打开目录
+        for (return_code = readdir_r(dir, &entry, &res);res != NULL && return_code == 0;return_code = readdir_r(dir, &entry, &res)) {
+            if (entry.d_type != DT_DIR) {//存放到列表中
+                doc_list.push_back(string(entry.d_name));
+            }
+        }
+        closedir(dir);//关闭目录
+    }
+}
+
+
 // test segmental k-mean
 int main(int argc, const char * argv[]) {
 //    writeSeg(wavTemPath, txtTemPath);    // read in the isolated word
 
   
 //    trainDigits();
-    readSeg(true);
+//    readSeg(true);
 //    record();
     
 //    getResult();
+    vector<string> files;
+    createDocList(files);
+    
+//    cout << files[19] << endl;
+//    for(int i = 0; i < files.size(); i++){
+//        cout << files[i] << endl;
+//    }
+    testReadDir(files);
+//    testSingleWav(files[19]);
     
     return 0;
 }
