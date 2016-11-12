@@ -140,10 +140,10 @@ void problem3(vector<vector<vector<double>>> segTemGroup, vector<vector<double>>
 void problem1(vector<vector<vector<double>>> segTemGroup,vector<vector<double>> testInput, vector<vector<vector<double>>>& varianceTerm, vector<vector<vector<int>>>& countTransfer, bool ifGussian)
 {
     if (! ifGussian) {
-        DigitRecognition(DIGIT_NUM4, testInput, segTemGroup, varianceTerm, countTransfer);
+        DigitRecognition(DIGIT_NUM7, testInput, segTemGroup, varianceTerm, countTransfer);
     }
     else{
-        DigitRecognitionGussian(DIGIT_NUM4, testInput, segTemGroup, varianceTerm, countTransfer);
+        DigitRecognitionGussian(DIGIT_NUM7, testInput, segTemGroup, varianceTerm, countTransfer);
     }
     
     cout << endl;
@@ -342,6 +342,11 @@ void readSeg(bool ifGuassian){
     cout << "problem3 result : ";
     problem3(segTemGroup, testInput, varianceTerm, countTransfer, ifGuassian);
     
+    cout << endl;
+    cout << "problem1 result : ";
+    problem1(segTemGroup, testInput, varianceTerm, countTransfer, ifGuassian);
+//    cout << endl;
+    
 }
 
 
@@ -400,18 +405,15 @@ int main(int argc, const char * argv[]) {
 
   
 //    trainDigits();
-//    readSeg(true);
+    readSeg(true);
 //    record();
     
-//    getResult();
-    vector<string> files;
-    createDocList(files);
+    getResult(true);
+//    vector<string> files;
+//    createDocList(files);
     
 //    cout << files[19] << endl;
-//    for(int i = 0; i < files.size(); i++){
-//        cout << files[i] << endl;
-//    }
-    testReadDir(files);
+//    testReadDir(files);
 //    testSingleWav(files[19]);
     
     return 0;
