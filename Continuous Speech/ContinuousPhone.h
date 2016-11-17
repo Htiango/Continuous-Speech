@@ -43,6 +43,13 @@ stack<int> DigitRecognition(int digit_num, vector<vector<double>>& input, vector
 
 stack<int> DigitRecognitionGussian(int digit_num, vector<vector<double>>& input, vector<vector<vector<double>>>& segTemGroup, vector<vector<vector<double>>>&varianceTerm, vector<vector<vector<int>>>& countTransfer);
 
+stack<int> backTrace_T(vector<vector<double>>& input, vector<vector<vector<int>>>& backTable, vector<double>& last);
+
+stack<int> RestrictPhoneGuassian_T(Trie& trie, vector<vector<double>>& input, vector<vector<vector<double>>>& varianceTerm, vector<vector<vector<int>>>& countTransfer);
+
+unsigned int pureLevenshteinDistance(const vector<int>& s1, const vector<int>& s2);
+
+stack<int> DigitRecognitionGussian_T(int digit_num, vector<vector<double>>& input, vector<vector<vector<double>>>& segTemGroup, vector<vector<vector<double>>> &varianceTerm, vector<vector<vector<int>>>& countTransfer);
 
 #endif
 

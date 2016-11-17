@@ -137,19 +137,19 @@ void problem3(vector<vector<vector<double>>> segTemGroup, vector<vector<double>>
 }
 
 
-void problem1(vector<vector<vector<double>>> segTemGroup,vector<vector<double>> testInput, vector<vector<vector<double>>>& varianceTerm, vector<vector<vector<int>>>& countTransfer, bool ifGussian)
+void problem1(int digit_num, vector<vector<vector<double>>> segTemGroup,vector<vector<double>> testInput, vector<vector<vector<double>>>& varianceTerm, vector<vector<vector<int>>>& countTransfer, bool ifGussian)
 {
     if (! ifGussian) {
-        DigitRecognition(DIGIT_NUM7, testInput, segTemGroup, varianceTerm, countTransfer);
+        DigitRecognition(digit_num, testInput, segTemGroup, varianceTerm, countTransfer);
     }
     else{
-        DigitRecognitionGussian(DIGIT_NUM7, testInput, segTemGroup, varianceTerm, countTransfer);
+        DigitRecognitionGussian(digit_num, testInput, segTemGroup, varianceTerm, countTransfer);
     }
     
     cout << endl;
 }
 
-void getResult(bool ifGuassian){
+void getResult(int digit_num, bool ifGuassian){
     vector<vector<vector<double>>> segTemGroup(TYPE_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
     vector<vector<vector<double>>> varianceTerm(TYPE_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
     vector<vector<vector<int>>> countTransfer(TYPE_NUM, vector<vector<int>>(SEG_NUM + 1, vector<int>(SEG_NUM)));
@@ -187,7 +187,7 @@ void getResult(bool ifGuassian){
     
     cout << endl;
     cout << "problem1 result : ";
-    problem1(segTemGroup, testInput, varianceTerm, countTransfer, ifGuassian);
+    problem1(digit_num, segTemGroup, testInput, varianceTerm, countTransfer, ifGuassian);
 }
 
 void trainDigits() {
@@ -300,18 +300,20 @@ void trainDigits() {
 
 
 void record(){
-    string filepath = "/Users/hty/desktop/record/567/record.wav";
+    string filepath = "/Users/hty/Desktop/Speech Recognition/project/project 6/englishTem/continueTem/record.wav";
     capture(filepath);
 }
 
-void readSeg(bool ifGuassian){
+
+// from continuous sentense
+void readSeg(int digit_num, bool ifGuassian){
     vector<vector<vector<double>>> segTemGroup(DIGIT_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
     vector<vector<vector<double>>> varianceTerm(DIGIT_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
     vector<vector<vector<int>>> countTransfer(DIGIT_NUM, vector<vector<int>>(SEG_NUM + 1, vector<int>(SEG_NUM)));
     
     ifstream in(txtIsolateFromConPath);
-    ifstream in2(variancePath);
-    ifstream in3(transferPath);
+    ifstream in2(txtIsolateFromConPathVariance);
+    ifstream in3(txtIsolateFromConPathTransfer);
     for (int i = 0; i < TYPE_NUM; i++)
     {
         for (int j = 0; j < SEG_NUM; j++)
@@ -344,7 +346,7 @@ void readSeg(bool ifGuassian){
     
     cout << endl;
     cout << "problem1 result : ";
-    problem1(segTemGroup, testInput, varianceTerm, countTransfer, ifGuassian);
+    problem1(digit_num, segTemGroup, testInput, varianceTerm, countTransfer, ifGuassian);
 //    cout << endl;
     
 }
@@ -399,16 +401,201 @@ void createDocList(std::vector<std::string> &doc_list){
 }
 
 
+void demo(){
+    cout <<"---------------------problem 6 --------------------------" << endl;
+    cout <<"--------------------record 7-digit wav -------------------------"<< endl;
+    record();
+    
+//    cout <<"---------------------- Digit 7 --------------------------" << endl;
+//    getResult(DIGIT_NUM7, true);
+    cout << "---------------------problem 7 -------------------------" << endl;
+    readSeg(DIGIT_NUM7, true);
+    
+//    cout << "--------------------record 4-digit wav -------------------------"<< endl;
+//    record();
+////    cout <<"---------------------- Digit 4 --------------------------" << endl;
+////    getResult(DIGIT_NUM4, true);
+//    cout << "---------------------problem 7 -------------------------" << endl;
+//    readSeg(DIGIT_NUM4, true);
+}
+
+
+void getAccuracy7_1(){
+    vector<vector<vector<double>>> segTemGroup(DIGIT_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
+    vector<vector<vector<double>>> varianceTerm(DIGIT_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
+    vector<vector<vector<int>>> countTransfer(DIGIT_NUM, vector<vector<int>>(SEG_NUM + 1, vector<int>(SEG_NUM)));
+    
+    ifstream in(txtIsolateFromConPath);
+    ifstream in2(txtIsolateFromConPathVariance);
+    ifstream in3(txtIsolateFromConPathTransfer);
+    for (int i = 0; i < TYPE_NUM; i++)
+    {
+        for (int j = 0; j < SEG_NUM; j++)
+        {
+            for (int k = 0; k < DIMENSION; k++)
+            {
+                in >> segTemGroup[i][j][k];
+                in2 >> varianceTerm[i][j][k];
+            }
+        }
+        for (int j = 0; j < SEG_NUM + 1; j++) {
+            for (int k = 0; k < SEG_NUM; k++) {
+                in3 >> countTransfer[i][j][k];
+            }
+        }
+    }
+    in.close();
+    in2.close();
+    in3.close();
+    
+    vector<string> digit = {"3333", "9111","1234", "2212", "3131", "3214", "1234567", "2103789", "3214123", "3434578","3456789","3772513", "3864510","4405676","4961762", "6010683", "6547890", "7182641", "8513223", "2924563", "5932106", "5936422", "6325912", "7641092", "7832688"};
+    string path = "/Users/hty/Desktop/Speech Recognition/project/project 6/englishTem/continueTem/accuracy/";
+    
+    int correct = 0;
+    int correct2 = 0;
+    int wholeWord = 0;
+    
+    
+    for(int i = 0; i < digit.size(); i++)
+    {
+        string filePath = path + digit[i] + "/record.wav";
+        string txtpath = path + digit[i] + "/";
+        vector<vector<double>> testInput;
+        featureExtractionTwoOld(testInput, filePath, txtpath);
+        Trie trie;
+        TrieNode* root = trie.getRoot();
+        for (int i = 0; i < MAX_BRANCH_NUM - 1; i++)
+        {
+            root->nextBranch[i]->segTemplate = segTemGroup[i];
+        }
+        stack<int> st = RestrictPhoneGuassian_T(trie, testInput, varianceTerm, countTransfer);
+        stack<int> st2 = DigitRecognitionGussian_T(digit[i].size(), testInput, segTemGroup, varianceTerm, countTransfer);
+        vector<int> sr;
+        while(!st.empty())
+        {
+            sr.push_back(st.top());
+            st.pop();
+        }
+        vector<int> sr2;
+        while(!st2.empty())
+        {
+            sr2.push_back(st2.top());
+            st2.pop();
+        }
+        vector<int> cr;
+        for(int j = 0; j < digit[i].size(); j++)
+        {
+            cr.push_back(digit[i][j] - '0');
+        }
+        int value = pureLevenshteinDistance(sr, cr);
+        int value2 = pureLevenshteinDistance(sr2, cr);
+        correct += digit[i].size() - value;
+        correct2 += digit[i].size() - value2;
+        wholeWord += digit[i].size();
+    }
+    
+    double accuracy = 1.0 * correct / wholeWord;
+    double accuracy2 = 1.0 * correct2 / wholeWord;
+    cout << "Accuracy of unrestricted = " << accuracy <<endl;
+    cout << "Accuracy of state machine = " << accuracy2 <<endl;
+}
+
+
+void getAccuracy6(){
+    vector<vector<vector<double>>> segTemGroup(DIGIT_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
+    vector<vector<vector<double>>> varianceTerm(DIGIT_NUM, vector<vector<double>>(SEG_NUM, vector<double>(DIMENSION)));
+    vector<vector<vector<int>>> countTransfer(DIGIT_NUM, vector<vector<int>>(SEG_NUM + 1, vector<int>(SEG_NUM)));
+    
+    ifstream in(segmentPath);
+    ifstream in2(variancePath);
+    ifstream in3(transferPath);
+    for (int i = 0; i < TYPE_NUM; i++)
+    {
+        for (int j = 0; j < SEG_NUM; j++)
+        {
+            for (int k = 0; k < DIMENSION; k++)
+            {
+                in >> segTemGroup[i][j][k];
+                in2 >> varianceTerm[i][j][k];
+            }
+        }
+        for (int j = 0; j < SEG_NUM + 1; j++) {
+            for (int k = 0; k < SEG_NUM; k++) {
+                in3 >> countTransfer[i][j][k];
+            }
+        }
+    }
+    in.close();
+    in2.close();
+    in3.close();
+    
+    vector<string> digit = {"3333", "9111","1234", "2212", "3131", "3214", "1234567", "2103789", "3214123", "3434578","3456789","3772513", "3864510","4405676","4961762", "6010683", "6547890", "7182641", "8513223", "2924563", "5932106", "5936422", "6325912", "7641092", "7832688"};
+    string path = "/Users/hty/Desktop/Speech Recognition/project/project 6/englishTem/continueTem/accuracy/";
+    
+    int correct = 0;
+    int correct2 = 0;
+    int wholeWord = 0;
+    
+    
+    for(int i = 0; i < digit.size(); i++)
+    {
+        string filePath = path + digit[i] + "/record.wav";
+        string txtpath = path + digit[i] + "/";
+        vector<vector<double>> testInput;
+        featureExtractionTwoOld(testInput, filePath, txtpath);
+        Trie trie;
+        TrieNode* root = trie.getRoot();
+        for (int i = 0; i < MAX_BRANCH_NUM - 1; i++)
+        {
+            root->nextBranch[i]->segTemplate = segTemGroup[i];
+        }
+        stack<int> st = RestrictPhoneGuassian_T(trie, testInput, varianceTerm, countTransfer);
+        stack<int> st2 = DigitRecognitionGussian_T(digit[i].size(), testInput, segTemGroup, varianceTerm, countTransfer);
+        vector<int> sr;
+        while(!st.empty())
+        {
+            sr.push_back(st.top());
+            st.pop();
+        }
+        vector<int> sr2;
+        while(!st2.empty())
+        {
+            sr2.push_back(st2.top());
+            st2.pop();
+        }
+        vector<int> cr;
+        for(int j = 0; j < digit[i].size(); j++)
+        {
+            cr.push_back(digit[i][j] - '0');
+        }
+        int value = pureLevenshteinDistance(sr, cr);
+        int value2 = pureLevenshteinDistance(sr2, cr);
+        correct += digit[i].size() - value;
+        correct2 += digit[i].size() - value2;
+        wholeWord += digit[i].size();
+    }
+    
+    double accuracy = 1.0 * correct / wholeWord;
+    double accuracy2 = 1.0 * correct2 / wholeWord;
+    cout << "Accuracy of unrestricted = " << accuracy <<endl;
+    cout << "Accuracy of state machine = " << accuracy2 <<endl;
+}
+
+
 // test segmental k-mean
 int main(int argc, const char * argv[]) {
 //    writeSeg(wavTemPath, txtTemPath);    // read in the isolated word
 
   
 //    trainDigits();
-    readSeg(true);
+//    readSeg(true);
 //    record();
+//
+    demo();
+//    getAccuracy7_1();
+//    getAccuracy6();
     
-    getResult(true);
+//    getResult(DIGIT_NUM7, true);
 //    vector<string> files;
 //    createDocList(files);
     

@@ -149,6 +149,86 @@ stack<int> RestrictPhoneGuassian(Trie& trie, vector<vector<double>>& input, vect
     return resultPos;
 }
 
+// using guassian distance
+
+stack<int> RestrictPhoneGuassian_T(Trie& trie, vector<vector<double>>& input, vector<vector<vector<double>>>& varianceTerm, vector<vector<vector<int>>>& countTransfer)
+{
+    int input_size = (int)input.size();
+    TrieNode* root = trie.getRoot();
+    
+    //back table is used to record every frame comes from which state in which template
+    //vector<int> contains the state num and whether have loop back
+    //backTable[][][0] refer the state number, backTable[][][1] refer whether loop back
+    vector<vector<vector<int>>> backTable(SEG_NUM * TYPE_NUM, vector<vector<int>>(input_size, vector<int>(2)));
+    
+    //leaf of every template
+    vector<double> last(MAX_BRANCH_NUM - 1, INT_MAX / 2);
+    
+    for(int i = 0; i < input_size; i++)
+    {
+        for(int j = 0; j < MAX_BRANCH_NUM - 1; j++)
+        {
+            vector<double> temp(SEG_NUM, INT_MAX / 2);
+            root->nextBranch[j]->curNodeCost = temp;
+            if(i == 0)
+            {
+                root->nextBranch[j]->preNodeCost[0] = nodeCost(input[i], root->nextBranch[j]->segTemplate[0], varianceTerm[j][0]) + edgeCost(0, countTransfer[j][0]);
+                root->nextBranch[j]->preNodeCost[1] = nodeCost(input[i], root->nextBranch[j]->segTemplate[1], varianceTerm[j][1]) + edgeCost(1, countTransfer[j][0]);
+            }
+            else
+            {
+                for (int k = 0; k < SEG_NUM; k++)
+                {
+                    double var1 = nodeCost(input[i], root->nextBranch[j]->segTemplate[k], varianceTerm[j][k]);
+                    double var2 = root->nextBranch[j]->preNodeCost[k] + var1 + edgeCost(k, countTransfer[j][k + 1]);
+                    int pos1 = 0;
+                    double var5 = costUtil(last, var1, pos1) + PENALTY;
+                    if (k == 0) {
+                        var5 += edgeCost(k, countTransfer[j][0]);
+                        if (var5 < INT_MAX / 2 )
+                            root->nextBranch[j]->curNodeCost[k] = min({ var2, var5});
+                        else
+                            root->nextBranch[j]->curNodeCost[k] = var2;
+                        if (root->nextBranch[j]->curNodeCost[k] == var5)
+                        {
+                            backTable[SEG_NUM * j + k][i][0] = SEG_NUM * pos1 + (SEG_NUM - 1);
+                            backTable[SEG_NUM * j + k][i][1] = 1;
+                        }
+                        else if (root->nextBranch[j]->curNodeCost[k] == var2)
+                        {
+                            backTable[SEG_NUM * j + k][i][0] = SEG_NUM * j + k;
+                            //backTable[SEG_NUM * j + k][i][1] = backTable[SEG_NUM * j + k][i - 1][1];
+                        }
+                    }
+                    else
+                    {
+                        double var3 = root->nextBranch[j]->preNodeCost[k - 1] + var1 + edgeCost(k, countTransfer[j][k]);
+                        root->nextBranch[j]->curNodeCost[k] = min({ var3, var2 });
+                        if (root->nextBranch[j]->curNodeCost[k] == var2)
+                        {
+                            backTable[SEG_NUM * j + k][i][0] = SEG_NUM * j + k;
+                            //backTable[SEG_NUM * j + k][i][1] = backTable[SEG_NUM * j + k][i - 1][1];
+                        }
+                        else if (root->nextBranch[j]->curNodeCost[k] == var3)
+                        {
+                            backTable[SEG_NUM * j + k][i][0] = SEG_NUM * j + (k - 1);
+                            //backTable[SEG_NUM * j + k][i][1] = backTable[SEG_NUM * j + (k - 1)][i - 1][1];
+                        }
+                    }
+                }
+                last[j] = root->nextBranch[j]->curNodeCost[SEG_NUM - 1];
+            }
+        }
+        if (i > 0)
+        {
+            trie.swapNodeCost();
+        }
+    }
+    
+    stack<int> resultPos;
+    resultPos = backTrace_T(input, backTable, last);
+    return resultPos;
+}
 
 //return the position in input to decide which frame is the end frame of one digit
 stack<int> RestrictPhone(Trie& trie, vector<vector<double>>& input, vector<vector<vector<double>>>& varianceTerm, vector<vector<vector<int>>>& countTransfer)
@@ -280,6 +360,47 @@ stack<int> backTrace(vector<vector<double>>& input, vector<vector<vector<int>>>&
         resultPhone.pop();
     }
     return resultPos;
+}
+
+//return the position in input to decide which frame is the end frame of one digit
+stack<int> backTrace_T(vector<vector<double>>& input, vector<vector<vector<int>>>& backTable, vector<double>& last)
+{
+    int input_size = (int)input.size();
+    //get the minimal state at last frame
+    double minLast = INT_MAX / 2;
+    int posLast = 0;
+    for (int i = 0; i < MAX_BRANCH_NUM - 1; i++)
+    {
+        if (minLast > last[i])
+        {
+            minLast = last[i];
+            posLast = i * SEG_NUM + (SEG_NUM - 1);
+        }
+    }
+    
+    //result position of input
+    stack<int> resultPos;
+    //back tracing
+    stack<int> resultPhone;
+    resultPhone.push(posLast / SEG_NUM);
+    int tracePos = posLast;
+    for (int i = input_size - 1; i >= 0; i--)\
+    {
+        int curPos = backTable[tracePos][i][0];
+        int loopBack = backTable[tracePos][i][1];
+        if (loopBack == 1)
+        {
+            resultPhone.push(curPos / SEG_NUM);
+            resultPos.push(i);
+        }
+        tracePos = curPos;
+    }
+//    while (!resultPhone.empty())
+//    {
+//        cout << resultPhone.top() << " ";
+//        resultPhone.pop();
+//    }
+    return resultPhone;
 }
 
 //cut digit frame from continuous speech
@@ -876,8 +997,189 @@ stack<int> DigitRecognitionGussian(int digit_num, vector<vector<double>>& input,
     return resultPhone;
 }
 
+// for segTemGroup, (tem_index, state, dimension)
+stack<int> DigitRecognitionGussian_T(int digit_num, vector<vector<double>>& input, vector<vector<vector<double>>>& segTemGroup, vector<vector<vector<double>>> &varianceTerm, vector<vector<vector<int>>>& countTransfer)
+{
+    int input_length = (int)input.size();
+    vector<vector<int>> traceMatrix(input_length, vector<int>(digit_num * TYPE_NUM * SEG_NUM, -1));
+    vector<bool> digit_able;
+    for (int i = 0 ; i < digit_num; i++) {
+        digit_able.push_back(false);
+    }
+    digit_able[0] = true;
+    
+    vector<vector<vector<double>>> pre_col(digit_num, vector<vector<double>>(TYPE_NUM, vector<double>(SEG_NUM)));
+    
+    // initialize the pre_col
+    for (int i = 0; i < digit_num; i++) {
+        for (int j = 0; j < TYPE_NUM; j++) {
+            for (int k = 0; k < SEG_NUM; k++) {
+                pre_col[i][j][k] = INT_MAX / 2;
+            }
+        }
+    }
+    
+    vector<vector<vector<double>>> cur_col= pre_col;
+    
+    double last_one;
+    int posOne = -1;
+    
+    double preMinCost;
+    
+    // get the minimum cost and fill the trace matrix
+    for (int i = 0; i < input_length; i++) {
+        for (int digit = 0; digit < digit_num; digit++) {
+            for (int tem_index = 0; tem_index < TYPE_NUM; tem_index++) {
+                if (digit_num == DIGIT_NUM7 && tem_index == 0 && digit == 0) {
+                    tem_index += 2;
+                }
+                if (i == 0)
+                {
+                    if (digit == 0) {
+                        cur_col[0][tem_index][0] = nodeCost(input[i], segTemGroup[tem_index][0], varianceTerm[tem_index][0]) + edgeCost(0, countTransfer[tem_index][0]);
+                        pre_col[0][tem_index][0] = nodeCost(input[i], segTemGroup[tem_index][0], varianceTerm[tem_index][0]) + edgeCost(0, countTransfer[tem_index][0]);
+                    }
+                }
+                for (int state_index = 0; state_index < SEG_NUM; state_index++) {
+                    if(i != 0)
+                    {
+                        if (digit_able[digit]) {
+                            if (digit > 0) {
+                                if (state_index == 0)
+                                {
+                                    posOne = - 1;
+                                    //                                    posTwo = - 1;
+                                    last_one = minLast(pre_col[digit - 1], posOne, SEG_NUM - 1) + edgeCost(state_index, countTransfer[tem_index][0]);
+                                    //                                    last_two = minLast(pre_col[digit - 1], posTwo, SEG_NUM - 2) + edgeCost(state_index, countTransfer[tem_index][0]);
+                                    double var = pre_col[digit][tem_index][state_index] + edgeCost(state_index, countTransfer[tem_index][state_index + 1]);
+                                    preMinCost = min({last_one, var});
+                                    cur_col[digit][tem_index][state_index] = preMinCost + nodeCost(input[i], segTemGroup[tem_index][state_index], varianceTerm[tem_index][state_index]);
+                                    if (preMinCost == last_one) {
+                                        traceMatrix[i][getMatrixIndex(digit, tem_index, state_index)] = getMatrixIndex(digit - 1, posOne, SEG_NUM - 1);
+                                    }
+                                    else{
+                                        traceMatrix[i][getMatrixIndex(digit, tem_index, state_index)] = getMatrixIndex(digit, tem_index, state_index);
+                                    }
+                                }
+                                
+                                else
+                                {
+                                    double var2 = pre_col[digit][tem_index][state_index - 1] + edgeCost(state_index, countTransfer[tem_index][state_index]);
+                                    double var3 = pre_col[digit][tem_index][state_index] + edgeCost(state_index, countTransfer[tem_index][state_index + 1]);
+                                    
+                                    preMinCost = min({var3, var2}) ;
+                                    cur_col[digit][tem_index][state_index] = preMinCost + nodeCost(input[i], segTemGroup[tem_index][state_index], varianceTerm[tem_index][state_index]);
+                                    if (digit < digit_num - 1 ) {
+                                        if(!digit_able[digit + 1])
+                                        {
+                                            if ((state_index == SEG_NUM - 1) && (cur_col[digit][tem_index][state_index] < INT_MAX / 2 )) {
+                                                digit_able[digit + 1] = true;
+                                            }
+                                        }
+                                    }
+                                    if (preMinCost == var2){
+                                        traceMatrix[i][getMatrixIndex(digit, tem_index, state_index)] = getMatrixIndex(digit, tem_index, state_index - 1);
+                                    }
+                                    else{
+                                        traceMatrix[i][getMatrixIndex(digit, tem_index, state_index)] = getMatrixIndex(digit, tem_index, state_index);
+                                    }
+                                }
+                            }
+                            
+                            // digit == 0
+                            else
+                            {
+                                if (state_index == 0) {
+                                    cur_col[digit][tem_index][state_index] = pre_col[digit][tem_index][state_index] + nodeCost(input[i], segTemGroup[tem_index][state_index], varianceTerm[tem_index][state_index]) + edgeCost(state_index, countTransfer[tem_index][state_index + 1]);
+                                    traceMatrix[i][getMatrixIndex(digit, tem_index, state_index)] = getMatrixIndex(digit, tem_index, state_index);
+                                }
+                                
+                                else{
+                                    double var2 = pre_col[digit][tem_index][state_index - 1] + edgeCost(state_index, countTransfer[tem_index][state_index]);
+                                    double var3 = pre_col[digit][tem_index][state_index] + edgeCost(state_index, countTransfer[tem_index][state_index + 1]);
+                                    preMinCost = min({var2, var3});
+                                    cur_col[digit][tem_index][state_index] = preMinCost + nodeCost(input[i], segTemGroup[tem_index][state_index], varianceTerm[tem_index][state_index]);
+                                    if(!digit_able[digit + 1])
+                                    {
+                                        if ((state_index == SEG_NUM - 1) && (cur_col[digit][tem_index][state_index] < INT_MAX / 2 )) {
+                                            digit_able[digit + 1] = true;
+                                        }
+                                    }
+                                    if (preMinCost == var2){
+                                        traceMatrix[i][getMatrixIndex(digit, tem_index, state_index)] = getMatrixIndex(digit, tem_index, state_index - 1);
+                                    }
+                                    else{
+                                        traceMatrix[i][getMatrixIndex(digit, tem_index, state_index)] = getMatrixIndex(digit, tem_index, state_index);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        cur_col.swap(pre_col);
+    }
+    
+    posOne = -1;
+    //    posTwo = -1;
+    last_one = minLast(pre_col[digit_num -1], posOne, SEG_NUM - 1);
+    //    last_two = minLast(pre_col[digit_num -1], posTwo, SEG_NUM - 2);
+    
+    double minCost = last_one;
+    //    min({last_one, last_two});
+    int minIndex = getMatrixIndex(digit_num - 1, posOne, SEG_NUM - 1);
+    
+    
+    int cur_index = minIndex;
+    int pre_index;
+    
+    stack<int> resultPhone;
+    stack<int> resultWords;
+    resultWords.push(getTem(cur_index));
+    //	resultPhone.push(cur_index);
+    
+    int cur_digit = -1;
+    int pre_digit = -1;
+    
+    // do the backtracing
+    for (int i = input_length - 1; i >= 0; i--) {
+        pre_index = traceMatrix[i][cur_index];
+        if (pre_index < 0 && i != 0) {
+            cout << "Output error";
+            return resultPhone;
+        }
+        
+        if (i > 0) {
+            cur_digit = getDigit(cur_index);
+            pre_digit = getDigit(pre_index);
+            if (cur_digit != pre_digit) {
+                //				int temp = getTem(pre_index);
+                int temp = getTem(pre_index);
+                resultWords.push(temp);
+                resultPhone.push(i);
+            }
+        }
+        cur_index = pre_index;
+    }
+    
+    return resultWords;
+}
 
-
+unsigned int pureLevenshteinDistance(const vector<int>& s1, const vector<int>& s2) {
+    const std::size_t len1 = s1.size(), len2 = s2.size();
+    std::vector<unsigned int> col(len2 + 1), prevCol(len2 + 1);
+    for (unsigned int i = 0; i < prevCol.size(); i++)
+        prevCol[i] = i;
+    for (unsigned int i = 0; i < len1; i++) {
+        col[0] = i + 1;
+        for (unsigned int j = 0; j < len2; j++) {
+            col[j + 1] = std::min({ prevCol[1 + j] + 1, col[j] + 1, prevCol[j] + (s1[i] == s2[j] ? 0 : 1) });
+        }
+        col.swap(prevCol);
+    }
+    return prevCol[len2];
+}
 
 
 

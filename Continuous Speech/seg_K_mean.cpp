@@ -26,10 +26,6 @@ double nodeCost(vector<double>& frame, vector<double>& segTem, vector<double>& v
     double nodeCost = 0;
     
     for (int i = 0; i < DIMENSION; i++) {
-        //        double x = log(2 * PI * varianceTerm[i]);
-//        double variance = varianceTerm[i];
-//        double distance = pow((frame[i] - segTem[i]), 2);
-//        double gauLog = log(2 * PI * varianceTerm[i]);
         nodeCost += log(2 * PI * varianceTerm[i]) + pow((frame[i] - segTem[i]), 2) / varianceTerm[i];
     }
     
@@ -91,10 +87,6 @@ vector<vector<int>> getOneSegIndex(vector<vector<double>>& temp1, vector<vector<
     vector<vector<int>> temSegIndex;    // store the segment information
     vector<int> oneTemSegIndex(2);      // each segment information has 2 things, first is starting index, the second is ending index
     
-    //    // initialize the segment information vector
-    //    for (int i = 0; i < SEG_NUM; i++) {
-    //        temSegIndex.push_back(oneTemSegIndex);
-    //    }
     
     // use the method of two column to compute the best cost
     vector<double> col(state_num), prevCol(state_num), colMax(state_num);
@@ -130,12 +122,6 @@ vector<vector<int>> getOneSegIndex(vector<vector<double>>& temp1, vector<vector<
                 double cost2 = prevCol[j] + edgeCost(j, countTransfer[j + 1]);
                 col[j] = min({cost1, cost2}) + nodeCost(temp1[i], segmentTem[j], varianceTerm[j]);
             }
-//            else{
-//                double cost1 = prevCol[j - 2] + edgeCost(j, countTransfer[j - 1]);
-//                double cost2 = prevCol[j - 1] + edgeCost(j, countTransfer[j]);
-//                double cost3 = prevCol[j] + edgeCost(j, countTransfer[j + 1]);
-//                col[j] = min({cost1, cost2, cost3}) + nodeCost(temp1[i], segmentTem[j], varianceTerm[j]);
-//            }
         }
         costMap[i] = col;
         col.swap(prevCol);
@@ -150,23 +136,6 @@ vector<vector<int>> getOneSegIndex(vector<vector<double>>& temp1, vector<vector<
     for (int i = frameNum - 2; i >= 0; i--) {
         double cost1, cost2;
         double minCost;
-//        if (dummy_index > 1) {
-//            cost1 = costMap[i][dummy_index];
-//            cost2 = costMap[i][dummy_index - 1];
-//            cost3 = costMap[i][dummy_index - 2];
-//            minCost = min({cost1,cost2,cost3});
-//            if (minCost == cost2) {
-//                dummy_index -= 1;
-//                dummy_segIndex.push_back({i + 1 , dummy_end});
-//                dummy_end = i;
-//            }
-//            else if (minCost == cost3){
-//                dummy_index -= 2;
-//                dummy_segIndex.push_back({i + 1, dummy_end});
-//                dummy_segIndex.push_back({-1 , -1});
-//                dummy_end = i;
-//            }
-//        }
         if (dummy_index >= 1){
             cost1 = costMap[i][dummy_index];
             cost2 = costMap[i][dummy_index - 1];
@@ -178,14 +147,6 @@ vector<vector<int>> getOneSegIndex(vector<vector<double>>& temp1, vector<vector<
             }
         }
     }
-    
-//    if (dummy_index != 0) {
-//        dummy_segIndex.push_back({0, dummy_end});
-//        dummy_segIndex.push_back({-1,-1});
-//    }
-//    else{
-//        dummy_segIndex.push_back({0, dummy_end});
-//    }
     
     dummy_segIndex.push_back({0, dummy_end});
     

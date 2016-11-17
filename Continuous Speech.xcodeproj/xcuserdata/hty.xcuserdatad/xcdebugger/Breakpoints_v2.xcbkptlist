@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500477964.92702"
+            timestampString = "501035317.262817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "748"
-            endingLineNumber = "748"
+            startingLineNumber = "869"
+            endingLineNumber = "869"
             landmarkName = "DigitRecognitionGussian(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; segTemGroup, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; &amp;varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
             landmarkType = "9">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500477964.92702"
+            timestampString = "501035317.262817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "749"
-            endingLineNumber = "749"
+            startingLineNumber = "870"
+            endingLineNumber = "870"
             landmarkName = "DigitRecognitionGussian(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; segTemGroup, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; &amp;varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
             landmarkType = "9">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500477964.92702"
+            timestampString = "501035317.262817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "742"
-            endingLineNumber = "742"
+            startingLineNumber = "863"
+            endingLineNumber = "863"
             landmarkName = "DigitRecognitionGussian(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; segTemGroup, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; &amp;varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
             landmarkType = "9">
          </BreakpointContent>
@@ -62,9 +62,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "291"
-            endingLineNumber = "291"
-            landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
-            landmarkType = "9">
+            endingLineNumber = "291">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500477964.92702"
+            timestampString = "501035317.262817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "759"
-            endingLineNumber = "759"
+            startingLineNumber = "880"
+            endingLineNumber = "880"
             landmarkName = "DigitRecognitionGussian(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; segTemGroup, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; &amp;varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
             landmarkType = "9">
          </BreakpointContent>
@@ -106,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500477964.92702"
+            timestampString = "501035317.262817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "741"
-            endingLineNumber = "741"
+            startingLineNumber = "862"
+            endingLineNumber = "862"
             landmarkName = "DigitRecognitionGussian(int digit_num, vector&lt;vector&lt;double&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; segTemGroup, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt; &amp;varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
             landmarkType = "9">
          </BreakpointContent>
@@ -138,12 +136,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/main.cpp"
-            timestampString = "500547520.40925"
+            timestampString = "501005402.915275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "350"
-            endingLineNumber = "350"
-            landmarkName = "readSeg(bool ifGuassian)"
+            startingLineNumber = "352"
+            endingLineNumber = "352"
+            landmarkName = "readSeg(int digit_num, bool ifGuassian)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -174,9 +172,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "448"
-            endingLineNumber = "448"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
+            endingLineNumber = "448">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -190,9 +186,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "443"
-            endingLineNumber = "443"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
+            endingLineNumber = "443">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -206,9 +200,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "453"
-            endingLineNumber = "453"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
+            endingLineNumber = "453">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -222,9 +214,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "449"
-            endingLineNumber = "449"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
+            endingLineNumber = "449">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -238,9 +228,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "450"
-            endingLineNumber = "450"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
+            endingLineNumber = "450">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -255,7 +243,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "320"
             endingLineNumber = "320"
-            landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
+            landmarkName = "dtw2hmm(vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -271,7 +259,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "323"
             endingLineNumber = "323"
-            landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
+            landmarkName = "dtw2hmm(vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -397,70 +385,6 @@
             timestampString = "500402683.344052"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "getOneSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; temp1, vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, vector&lt;vector&lt;int&gt;&gt;&amp; segIndexPrev, int state_num)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500402683.344052"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "getOneSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; temp1, vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, vector&lt;vector&lt;int&gt;&gt;&amp; segIndexPrev, int state_num)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500402683.344052"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "getOneSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; temp1, vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, vector&lt;vector&lt;int&gt;&gt;&amp; segIndexPrev, int state_num)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500402683.344052"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "getOneSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; temp1, vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, vector&lt;vector&lt;int&gt;&gt;&amp; segIndexPrev, int state_num)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500402683.344052"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
             endingLineNumber = "53"
             landmarkName = "edgeCost(int nextIndex, vector&lt;int&gt;&amp; countTransfer)"
@@ -510,9 +434,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "edgeCost(int nextIndex, vector&lt;int&gt;&amp; countTransfer)"
-            landmarkType = "9">
+            endingLineNumber = "58">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -526,9 +448,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "edgeCost(int nextIndex, vector&lt;int&gt;&amp; countTransfer)"
-            landmarkType = "9">
+            endingLineNumber = "60">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -542,25 +462,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "edgeCost(int nextIndex, vector&lt;int&gt;&amp; countTransfer)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Continuous Speech/seg_K_mean.cpp"
-            timestampString = "500402683.344052"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "getOneSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; temp1, vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, vector&lt;vector&lt;int&gt;&gt;&amp; segIndexPrev, int state_num)"
-            landmarkType = "9">
+            endingLineNumber = "59">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -591,7 +493,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "196"
             endingLineNumber = "196"
-            landmarkName = "getOneSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; temp1, vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, vector&lt;vector&lt;int&gt;&gt;&amp; segIndexPrev, int state_num)"
+            landmarkName = "getSegTem(vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, int state_num)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -606,9 +508,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "451"
-            endingLineNumber = "451"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
+            endingLineNumber = "451">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -622,9 +522,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "460"
-            endingLineNumber = "460"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
+            endingLineNumber = "460">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -638,9 +536,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "457"
-            endingLineNumber = "457"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
+            endingLineNumber = "457">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -654,9 +550,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "455"
-            endingLineNumber = "455"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
+            endingLineNumber = "455">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -670,9 +564,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "452"
-            endingLineNumber = "452"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
+            endingLineNumber = "452">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -686,9 +578,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "454"
-            endingLineNumber = "454"
-            landmarkName = "conDtw2hmm(vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt; temGroup, vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt; initSegIndex, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; countTransfer)"
-            landmarkType = "9">
+            endingLineNumber = "454">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -719,7 +609,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "305"
             endingLineNumber = "305"
-            landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
+            landmarkName = "dtw2hmm(vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -735,7 +625,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "300"
             endingLineNumber = "300"
-            landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
+            landmarkName = "dtw2hmm(vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -751,7 +641,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "313"
             endingLineNumber = "313"
-            landmarkName = "getSegIndex(vector&lt;vector&lt;double&gt;&gt;&amp; segmentTem, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; segIndexPrev, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer, int state_num)"
+            landmarkName = "dtw2hmm(vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; temGroup, vector&lt;vector&lt;double&gt;&gt;&amp; varianceTerm, vector&lt;vector&lt;int&gt;&gt;&amp; countTransfer)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -762,11 +652,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500477964.92702"
+            timestampString = "501035317.262817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "435"
-            endingLineNumber = "435"
+            startingLineNumber = "556"
+            endingLineNumber = "556"
             landmarkName = "getSegFrame(vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt;&amp; allState, vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; variance, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; transfer)"
             landmarkType = "9">
          </BreakpointContent>
@@ -778,11 +668,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500477964.92702"
+            timestampString = "501035317.262817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "463"
-            endingLineNumber = "463"
+            startingLineNumber = "584"
+            endingLineNumber = "584"
             landmarkName = "getSegFrame(vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt;&amp; allState, vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; variance, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; transfer)"
             landmarkType = "9">
          </BreakpointContent>
@@ -794,11 +684,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/ContinuousPhone.cpp"
-            timestampString = "500477964.92702"
+            timestampString = "501035317.262817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "494"
-            endingLineNumber = "494"
+            startingLineNumber = "615"
+            endingLineNumber = "615"
             landmarkName = "getSegFrame(vector&lt;vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&gt;&amp; allState, vector&lt;vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&gt;&amp; input, vector&lt;vector&lt;vector&lt;double&gt;&gt;&gt;&amp; variance, vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt;&amp; transfer)"
             landmarkType = "9">
          </BreakpointContent>
@@ -824,11 +714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Continuous Speech/main.cpp"
-            timestampString = "500547520.40925"
+            timestampString = "501035886.755603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "416"
-            endingLineNumber = "416"
+            startingLineNumber = "603"
+            endingLineNumber = "603"
             landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "9">
          </BreakpointContent>

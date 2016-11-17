@@ -16,4 +16,8 @@
 
 using namespace std;
 
+#define PI_GAUSS        (3.1416)
+#define MIN_VARIANCE    (0.001)
+#define TEM_BIAS        (0.5)
+
 #endif /* multGaussian_hpp */
